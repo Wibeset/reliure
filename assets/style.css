@@ -204,6 +204,18 @@ h1 em { color: var(--text-secondary); }
   box-shadow: 0 12px 32px color-mix(in srgb, var(--progress) 45%, transparent);
 }
 
+/* Pre-launch badge: same shape as the button, but visibly not clickable. */
+.cta-soon {
+  background: color-mix(in srgb, var(--progress) 16%, transparent);
+  color: var(--text);
+  box-shadow: none;
+  cursor: default;
+}
+
+.cta-soon:hover { transform: none; filter: none; box-shadow: none; }
+
+.cta-soon .cta-icon { color: var(--progress); }
+
 .cta-icon {
   width: 22px;
   height: 22px;
