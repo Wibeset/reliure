@@ -493,6 +493,9 @@ footer {
   text-align: left;
 }
 
+.footer-meta p { text-wrap: balance; }
+.nowrap { white-space: nowrap; }
+
 .footer-meta nav { display: flex; gap: 16px; }
 .footer-meta nav a { padding: 6px 4px; }
 .footer-meta nav a { text-decoration: none; }
@@ -542,7 +545,8 @@ footer {
     bottom: calc(100% + 24px);
     left: 50%;
     width: min(420px, 90vw);
-    margin-left: min(-210px, -45vw);
+    /* Centered on the phone: pull back by half its own width. */
+    margin-left: calc(min(420px, 90vw) / -2);
     text-align: center;
   }
   .callout-text h3 { font-size: 28px; }
@@ -558,7 +562,19 @@ footer {
   .nav nav { gap: 14px; }
   .hero { padding-top: 56px; }
   .mission, .features, .faq, .closing { padding-top: 112px; }
+  .cta { padding: 16px 22px; font-size: 17px; gap: 8px; }
+  .cta-icon { width: 20px; height: 20px; }
   .features ul { grid-template-columns: 1fr; gap: 48px; }
   footer { margin-top: 112px; }
   .footer-meta { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* Smallest phones (iPhone SE 1st gen, 320 px): keep the nav on one line and the button on one line. */
+
+@media (max-width: 380px) {
+  .nav { padding: 16px; }
+  .brand { gap: 8px; font-size: 24px; }
+  .brand img { width: 30px; height: 30px; border-radius: 7px; }
+  .nav nav { gap: 4px; }
+  .cta { padding: 14px 18px; font-size: 15px; white-space: nowrap; }
 }
