@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reliure — Your reading life, bound together</title>
+  <meta name="description" content="Reliure is a quiet reading journal for iPhone: keep every book, know where you are, remember what moved you.">
+  <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1012" media="(prefers-color-scheme: dark)">
+  <link rel="alternate" hreflang="en" href="/">
+  <link rel="alternate" hreflang="fr" href="/fr/">
+  <link rel="alternate" hreflang="x-default" href="/">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <meta property="og:title" content="Reliure">
+  <meta property="og:description" content="Reliure is a quiet reading journal for iPhone: keep every book, know where you are, remember what moved you.">
+  <meta property="og:image" content="assets/icon.png">
+</head>
+<body>
+  <!-- TODO: replace idXXXXXXXXXX with the App Store ID, and the .qr placeholder with a QR code of that link. -->
+  <header class="nav">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="">Reliure</a>
+    <nav>
+      <a href="fr/" hreflang="fr" lang="fr">Français</a>
+      <a href="https://apps.apple.com/app/idXXXXXXXXXX">App Store ↗</a>
+      <a class="qr" href="https://apps.apple.com/app/idXXXXXXXXXX" aria-label="Scan to download"><span>QR</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Your <span class="mark">reading life<svg class="swoosh" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 17C70 7 170 3 296 11" pathLength="1"/></svg></span>,<br><em>bound together.</em></h1>
+      <p class="sub">Scan your books, log your pages, and see your reading grow. No account needed.</p>
+      <a class="cta" href="https://apps.apple.com/app/idXXXXXXXXXX"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="cta-arrow" d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg><span>Get it on the App Store</span></a>
+    </section>
+
+    <!-- Tour: the phone stays pinned while four screens scroll by, each with a callout, alternating left and right.
+         TODO: replace each .screen placeholder with a real screenshot, then adjust --x/--y
+         (percent of the phone's width/height) so each line lands on the right spot. -->
+    <section class="tour" style="--steps: 4">
+      <div class="stage">
+        <div class="device">
+          <div class="screen is-active" data-step="0" aria-hidden="true"><span>Screenshot<br>Home</span></div>
+          <div class="screen" data-step="1" aria-hidden="true"><span>Screenshot<br>Continue reading</span></div>
+          <div class="screen" data-step="2" aria-hidden="true"><span>Screenshot<br>Add a book</span></div>
+          <div class="screen" data-step="3" aria-hidden="true"><span>Screenshot<br>Statistics</span></div>
+          <div class="callout is-active" data-step="0" style="--x: 30; --y: 62">
+            <div class="callout-text"><h3>Home</h3><p>Your current book and your whole library, the moment you open the app.</p></div>
+            <span class="callout-line" aria-hidden="true"></span>
+            <span class="callout-dot" aria-hidden="true"></span>
+          </div>
+          <div class="callout callout-right" data-step="1" style="--x: 50; --y: 47">
+            <div class="callout-text"><h3>Keep reading</h3><p>Update your page in a tap. Every update is saved as a reading session.</p></div>
+            <span class="callout-line" aria-hidden="true"></span>
+            <span class="callout-dot" aria-hidden="true"></span>
+          </div>
+          <div class="callout" data-step="2" style="--x: 50; --y: 32">
+            <div class="callout-text"><h3>Add a book, easily</h3><p>Scan the barcode and it’s on your shelf. Or search by title, author or ISBN.</p></div>
+            <span class="callout-line" aria-hidden="true"></span>
+            <span class="callout-dot" aria-hidden="true"></span>
+          </div>
+          <div class="callout callout-right" data-step="3" style="--x: 35; --y: 55">
+            <div class="callout-text"><h3>Statistics</h3><p>Pages read, sessions and streaks, by week, month or year.</p></div>
+            <span class="callout-line" aria-hidden="true"></span>
+            <span class="callout-dot" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission">
+      <p>Made in the belief that the books we read quietly shape who we become, and deserve to be remembered.</p>
+    </section>
+
+    <section class="features">
+      <ul>
+          <li>
+            <h3>Keep every book</h3>
+            <p>Scan it, search it or type it in. Your library grows with each book you pick up.</p>
+          </li>
+          <li>
+            <h3>Know where you are</h3>
+            <p>Your page, your progress and the last time you read, always at hand.</p>
+          </li>
+          <li>
+            <h3>Remember what moved you</h3>
+            <p>Notes, quotes and ratings, so a book stays with you long after the last page.</p>
+          </li>
+          <li>
+            <h3>Watch the habit grow</h3>
+            <p>Pages, sessions and streaks show how reading fits into your days.</p>
+          </li>
+      </ul>
+    </section>
+
+    <section class="closing">
+      <h2>Keep the story going.</h2>
+      <a class="cta" href="https://apps.apple.com/app/idXXXXXXXXXX"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="cta-arrow" d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg><span>Get it on the App Store</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-meta">
+      <p>© 2026 Reliure · Made with <svg class="heart" viewBox="0 0 24 22" role="img" aria-label="love"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg> by Wibeset in Canada</p>
+      <nav>
+        <a href="https://apps.apple.com/app/idXXXXXXXXXX">App Store ↗</a>
+        <a href="fr/" hreflang="fr" lang="fr">Français</a>
+      </nav>
+    </div>
+    <p class="footer-mark" aria-hidden="true">Reliure</p>
+  </footer>
+  <script src="assets/tour.js" defer></script>
+</body>
+</html>
