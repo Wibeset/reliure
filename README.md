@@ -1,32 +1,57 @@
-# Reliure — site
+<p align="center">
+  <img src="assets/icon.png" width="96" height="96" alt="Reliure app icon">
+</p>
 
-One-page site for the Reliure iOS app, served by GitHub Pages. Static HTML/CSS, no build step.
+<h1 align="center">Reliure</h1>
 
-- `index.html` — English (default)
-- `fr/index.html` — French
-- `assets/` — shared stylesheet and icons
+<p align="center"><strong>Your reading life, bound together.</strong></p>
 
-Layout follows cronicle.me: logo and name on the left of the nav, language / App Store / QR code on the right; a large serif headline (Instrument Serif, Google Fonts); a scroll tour where the phone stays pinned while four screens go by (Home, Continue reading, Add a book, Statistics), each with a callout whose line points at a spot on the screen (`assets/tour.js`); a mission sentence; four highlights in a 2 × 2 grid; a closing CTA; and a footer ending on an oversized wordmark. Both language pages share the same markup, so edit them together.
+<p align="center">
+  Scan your books, log your pages, and see your reading grow. No account needed.
+</p>
 
-Colors come from the app's asset catalog (`rendu-ios/Reliure/Resources/Assets.xcassets`); dark mode follows the system setting.
+<p align="center">
+  <a href="https://reliure.me">reliure.me</a> · <a href="https://reliure.me/fr/">Français</a>
+</p>
 
-## Before launch
+![Reliure: Your reading life, bound together.](assets/og-en.png)
 
-- Replace `idXXXXXXXXXX` in both pages with the App Store ID.
-- Replace the `.qr` placeholder with a QR code of the App Store link.
-- Replace the four `.screen` placeholders in the tour with real screenshots, then adjust each callout's `--x` / `--y` (percent of the phone's width / height) so the line lands on the right spot.
+## Made for readers
 
-## Deploy
+Reliure is an iPhone app for keeping track of the books you read. It's built around the moments you actually read: a page update before bed, a book scanned at the shop, a quick look at where you left off. No feed, no noise, and no sign-up.
 
-`.github/workflows/pages.yml` publishes the site on every push to `main` (or by hand from the Actions tab). It copies only `index.html`, `fr/`, `assets/`, `CNAME` and `.nojekyll` into the published artifact.
+## What you can do
 
-One-time setup:
+- **Add a book in seconds.** Scan the ISBN barcode, search by title or author, or type the ISBN yourself.
+- **Keep your library in order.** To read, reading, read and wishlist, all in one place.
+- **Pick up where you left off.** Your current book waits on the home screen with your page and progress.
+- **Update your page in a tap.** Enter a page or a percentage, or nudge it with + and −. Every update is saved as a reading session.
+- **Remember what moved you.** Notes, quotes and ratings, so a book stays with you after the last page.
+- **Watch the habit grow.** Pages read, sessions and reading streaks, by week, month or year.
 
-1. Push the repo to GitHub.
-2. Settings → Pages → Source: **GitHub Actions**.
-3. Settings → Pages → Custom domain: `reliure.me` (the `CNAME` file alone isn't enough when deploying with Actions), then tick **Enforce HTTPS** once the certificate is issued.
-4. DNS at the registrar:
-   - apex `reliure.me`: `A` records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (and `AAAA` `2606:50c0:8000::153` … `2606:50c0:8003::153` for IPv6)
-   - `www`: `CNAME` to `<github-user>.github.io`
+## Private by default
 
-The pages use root-relative `hreflang` links (`/`, `/fr/`), so they expect to be served at the domain root, as with the custom domain above.
+No account, no sign-up. Your library is stored on your iPhone.
+
+## Download
+
+Reliure is coming to the App Store for iPhone.
+
+---
+
+## En français
+
+**Votre vie de lecture, reliée.**
+
+Reliure est une app iPhone pour suivre les livres que vous lisez. Scannez vos livres, notez vos pages et voyez votre lecture grandir, sans compte.
+
+- **Ajoutez un livre en quelques secondes** : scannez le code-barres ISBN, cherchez par titre ou auteur, ou entrez l’ISBN.
+- **Reprenez là où vous en étiez** : votre livre en cours, votre page et votre progression, dès l’ouverture.
+- **Mettez à jour votre page d’un geste** : chaque mise à jour devient une session de lecture.
+- **Gardez vos notes et évaluations**, et suivez vos pages lues, sessions et séries de jours.
+
+[reliure.me/fr](https://reliure.me/fr/)
+
+---
+
+<p align="center">Made with ♥ by Wibeset in Canada</p>
