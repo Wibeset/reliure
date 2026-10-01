@@ -43,7 +43,7 @@ Reliure is coming to the App Store for iPhone.
 
 **Toutes vos lectures, reliées.**
 
-Reliure est une app iPhone pour suivre les livres que vous lisez. Scannez vos livres, notez vos pages et voyez votre lecture grandir, sans compte.
+Reliure est une app iPhone pour suivre les livres que vous lisez. Scannez vos livres, notez où vous en êtes et suivez vos progrès, sans compte.
 
 - **Ajoutez un livre en quelques secondes** : scannez le code-barres ISBN, cherchez par titre ou auteur, ou entrez l’ISBN.
 - **Reprenez là où vous en étiez** : votre livre en cours, votre page et votre progression, dès l’ouverture.
