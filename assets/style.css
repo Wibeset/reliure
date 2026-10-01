@@ -544,6 +544,8 @@ footer {
   color: var(--surface-secondary);
   opacity: 0.5;
   user-select: none;
+  /* At this size the glyph box reaches above the element and would cover the footer links. */
+  pointer-events: none;
 }
 
 /* Medium and small screens: text above the phone, dot on the spot, no line. */
