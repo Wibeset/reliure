@@ -1,3 +1,5 @@
+/* Source stylesheet: the pages load style.min.css. Run scripts/build-css.sh after editing. */
+
 /* Colors mirror the app's asset catalog. */
 :root {
   color-scheme: light dark;
@@ -6,7 +8,7 @@
   --surface-secondary: #eeece7;
   --text: #17212b;
   --text-secondary: #5f646c;
-  --progress: #3db86b;
+  --progress: #17212b;
   --bezel: #0b0c0e;
   /* Fine paper grain, tinted with the ink color. */
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.13 0 0 0 0 0.17 0.16 0 0 0 -0.04'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23g)'/%3E%3C/svg%3E");
@@ -21,6 +23,8 @@
     --surface-secondary: #2a2b2f;
     --text: #f2f1ee;
     --text-secondary: #9a9da3;
+    /* Same navy, lifted: #17212b itself would vanish on the dark background (3.4:1 here). */
+    --progress: #4a6a8c;
     --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.95 0 0 0 0 0.93 0.16 0 0 0 -0.04'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23g)'/%3E%3C/svg%3E");
   }
 }
@@ -96,21 +100,22 @@ section { padding: 0 20px; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: 28px 40px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: 36px;
   text-decoration: none;
 }
 
-.brand img { width: 36px; height: 36px; border-radius: 9px; }
+.brand picture { display: flex; }
+.brand img { width: 48px; height: 48px; }
 
-.nav nav { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+.nav nav { display: flex; align-items: center; gap: 16px; font-size: 16px; }
 
 .nav nav a:not(.qr) { padding: 8px 4px; }
 
@@ -132,6 +137,8 @@ section { padding: 0 20px; }
 
 .hero {
   padding-top: 96px;
+  /* Books start their fall off to the sides: never let them widen the page. */
+  overflow-x: clip;
   text-align: center;
 }
 
@@ -147,7 +154,7 @@ h1 {
 
 h1 em { color: var(--text-secondary); }
 
-/* Hand-drawn green underline under the key words, drawn in on load. */
+/* Hand-drawn navy underline under the key words, drawn in on load. */
 .mark { position: relative; z-index: 0; white-space: nowrap; }
 
 .swoosh {
@@ -174,6 +181,73 @@ h1 em { color: var(--text-secondary); }
   .swoosh { animation: none; stroke-dashoffset: 0; }
 }
 
+/* Shelf of book spines under the hero: on load, each book drops from the sky at its own spot across
+   the screen (--x), in a shuffled order (--d), tumbling slightly (--r), and bounces as it lands. */
+.shelf {
+  --s: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  width: fit-content;
+  margin: 72px auto 0;
+  padding: 0 28px;
+  border-bottom: 2px solid color-mix(in srgb, var(--text) 18%, transparent);
+}
+
+.spine {
+  position: relative;
+  flex: none;
+  width: calc(var(--w) * var(--s) * 1px);
+  height: calc(var(--h) * var(--s) * 1px);
+  border-radius: 3px 3px 1px 1px;
+  /* Two bands near the top and bottom, light then dark so they show on any cover color. */
+  background:
+    linear-gradient(to bottom,
+      transparent 9%, rgb(255 255 255 / 0.22) 9% 10.5%, rgb(0 0 0 / 0.16) 10.5% 12%,
+      transparent 12% 86%, rgb(255 255 255 / 0.22) 86% 87.5%, rgb(0 0 0 / 0.16) 87.5% 89%, transparent 89%),
+    var(--c);
+  box-shadow: inset 2px 0 rgb(255 255 255 / 0.14), inset -3px 0 rgb(0 0 0 / 0.14);
+  animation: drop 0.95s var(--d) both;
+}
+
+/* The last book leans back against the row. */
+.spine-lean {
+  margin-left: calc(30px * var(--s));
+  transform: rotate(-12deg);
+  transform-origin: bottom left;
+}
+
+/* The logo's bookmark, hanging out of one book. */
+.spine-ribbon::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 58%;
+  width: calc(7px * var(--s));
+  height: calc(26px * var(--s));
+  background: #c8d6e5;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
+}
+
+/* Falls under gravity (ease-in), lands, then two small rebounds. */
+@keyframes drop {
+  0% { translate: var(--x) -100vh; rotate: var(--r); animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); }
+  62% { translate: 0 0; rotate: 0deg; animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1); }
+  78% { translate: 0 -14px; animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); }
+  90% { translate: 0 0; animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1); }
+  95% { translate: 0 -4px; animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); }
+  100% { translate: 0 0; rotate: 0deg; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .spine { filter: brightness(0.85) saturate(0.9); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spine { animation: none; }
+}
+
 .sub {
   margin-top: 28px;
   font-size: clamp(17px, 2vw, 20px);
@@ -188,9 +262,9 @@ h1 em { color: var(--text-secondary); }
   margin-top: 36px;
   padding: 18px 34px;
   border-radius: 14px;
-  /* Primary green from the app. Ink text in both themes: white on this green is too low-contrast. */
+  /* Navy button from the logo, cream text in both themes (5:1 or better). */
   background: var(--progress);
-  color: #17212b;
+  color: #f5f3ee;
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
@@ -215,6 +289,33 @@ h1 em { color: var(--text-secondary); }
 .cta-soon:hover { transform: none; filter: none; box-shadow: none; }
 
 .cta-soon .cta-icon { color: var(--progress); }
+
+/* Mini reading-progress bar in the pre-launch badge: fills once on load, almost to the end. */
+.cta-progress {
+  width: 40px;
+  height: 5px;
+  margin-left: 4px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--progress) 18%, transparent);
+}
+
+.cta-progress span {
+  display: block;
+  width: 85%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--progress);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fill 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.5s forwards;
+}
+
+@keyframes fill { to { transform: scaleX(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-progress span { animation: none; transform: none; }
+}
 
 .cta-icon {
   width: 22px;
@@ -243,7 +344,8 @@ h1 em { color: var(--text-secondary); }
 .tour {
   /* Phone size: as large as possible while fitting the viewport. */
   --ph: min(1300px, calc(100svh - 96px));
-  --pw: calc(var(--ph) * 9 / 19.5);
+  /* iPhone 17 Pro proportions, so its screenshots fill the screen exactly. */
+  --pw: calc(var(--ph) / 2.087);
   /* Distance from the phone's left edge back to where the callout text starts. */
   --reach: calc(50vw - var(--pw) / 2 - 5vw);
   position: relative;
@@ -272,33 +374,17 @@ h1 em { color: var(--text-secondary); }
 .screen {
   position: absolute;
   inset: calc(var(--pw) * 0.037);
-  display: grid;
-  /* Label sits low so it never hides a callout dot. */
-  place-items: end center;
-  padding-bottom: 14%;
+  overflow: hidden;
   border-radius: calc(var(--pw) * 0.125);
   background: var(--surface-secondary);
-  color: var(--text-secondary);
-  font-size: 14px;
-  text-align: center;
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .screen.is-active { opacity: 1; }
 
-/* Dynamic Island */
-.screen::before {
-  content: "";
-  position: absolute;
-  top: 2.4%;
-  left: 50%;
-  width: 30%;
-  height: 4.4%;
-  border-radius: 999px;
-  background: var(--bezel);
-  transform: translateX(-50%);
-}
+/* The captures already show the status bar and Dynamic Island. */
+.screen img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .callout {
   position: absolute;
@@ -573,11 +659,15 @@ footer {
 
 @media (max-width: 760px) {
   .qr { display: none; }
+  .nav { padding: 20px 24px; }
+  .brand { gap: 10px; font-size: 32px; }
+  .brand img { width: 42px; height: 42px; }
   .nav nav { gap: 14px; }
   .hero { padding-top: 56px; }
   .mission, .features, .faq, .closing { padding-top: 112px; }
   .cta { padding: 16px 22px; font-size: 17px; gap: 8px; }
   .cta-icon { width: 20px; height: 20px; }
+  .shelf { --s: 0.6; margin-top: 56px; padding: 0 16px; }
   .features ul { grid-template-columns: 1fr; gap: 48px; }
   footer { margin-top: 112px; }
   .footer-meta { flex-direction: column; gap: 12px; text-align: center; }
@@ -587,8 +677,11 @@ footer {
 
 @media (max-width: 380px) {
   .nav { padding: 16px; }
-  .brand { gap: 8px; font-size: 24px; }
-  .brand img { width: 30px; height: 30px; border-radius: 7px; }
+  .brand { gap: 8px; font-size: 28px; }
+  .brand img { width: 36px; height: 36px; }
+  .cta-progress { display: none; }
+  /* Fewer books so the shelf fits a 320 px screen. */
+  .spine-extra { display: none; }
   .nav nav { gap: 4px; }
   .cta { padding: 14px 18px; font-size: 15px; white-space: nowrap; }
 }

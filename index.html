@@ -13,14 +13,17 @@
   <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0f1012" media="(prefers-color-scheme: dark)">
   <!-- TODO: once the app is live, add the Smart App Banner: <meta name="apple-itunes-app" content="app-id=XXXXXXXXXX"> -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Font loads without blocking render; a size-matched fallback (see style.css) avoids layout shift. -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"></noscript>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.min.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Reliure">
   <meta property="og:title" content="Reliure — Your reading life, bound together">
@@ -39,7 +42,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <!-- App not released yet: download links are hidden. At launch, set the App Store link and replace the .qr placeholder with a QR code of it. -->
   <header class="nav">
-    <a class="brand" href="./"><img src="assets/icon.png" width="36" height="36" alt="">Reliure</a>
+    <a class="brand" href="./"><picture><source srcset="assets/icon-dark.png" media="(prefers-color-scheme: dark)"><img src="assets/icon.png" width="48" height="48" alt=""></picture>Reliure</a>
     <nav aria-label="Main">
       <a href="fr/" hreflang="fr" lang="fr">Français</a>
       
@@ -51,36 +54,58 @@
     <section class="hero">
       <h1>Your <span class="mark">reading life<svg class="swoosh" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 17C70 7 170 3 296 11" pathLength="1"/></svg></span>,<br><em>bound together.</em></h1>
       <p class="sub">Scan your books, log your pages, and see your reading grow. No account needed.</p>
-      <p class="cta cta-soon"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Coming soon to the App Store</span></p>
+      <p class="cta cta-soon"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Coming soon to the App Store</span><span class="cta-progress" aria-hidden="true"><span></span></span></p>
+      <!-- Decorative shelf: books bound together, a nod to the name. -->
+      <div class="shelf" aria-hidden="true">
+        <span class="spine" style="--x: -7vw; --d: 0.62s; --r: -14deg; --h: 140; --w: 30; --c: #b5604a"></span>
+        <span class="spine" style="--x: 5vw; --d: 1.18s; --r: 9deg; --h: 118; --w: 22; --c: #e3d8c3"></span>
+        <span class="spine spine-extra" style="--x: -2vw; --d: 0.55s; --r: 11deg; --h: 134; --w: 28; --c: #6b5b7b"></span>
+        <span class="spine" style="--x: 8vw; --d: 0.30s; --r: -6deg; --h: 156; --w: 36; --c: #17212b"></span>
+        <span class="spine" style="--x: -6vw; --d: 0.95s; --r: 18deg; --h: 128; --w: 26; --c: #8d9f86"></span>
+        <span class="spine" style="--x: 2vw; --d: 1.42s; --r: -10deg; --h: 146; --w: 32; --c: #c99a3e"></span>
+        <span class="spine spine-extra" style="--x: -8vw; --d: 1.25s; --r: -9deg; --h: 120; --w: 24; --c: #d6c9a8"></span>
+        <span class="spine" style="--x: 4vw; --d: 0.48s; --r: 12deg; --h: 110; --w: 20; --c: #7a3b45"></span>
+        <span class="spine spine-ribbon" style="--x: -2vw; --d: 0.20s; --r: -4deg; --h: 162; --w: 38; --c: #5b7590"></span>
+        <span class="spine" style="--x: 6vw; --d: 1.30s; --r: 15deg; --h: 124; --w: 24; --c: #d9b8ad"></span>
+        <span class="spine spine-extra" style="--x: -4vw; --d: 0.35s; --r: 14deg; --h: 152; --w: 32; --c: #3e5a73"></span>
+        <span class="spine" style="--x: 8vw; --d: 0.78s; --r: -8deg; --h: 150; --w: 30; --c: #4b6a5e"></span>
+        <span class="spine" style="--x: -8vw; --d: 1.05s; --r: 6deg; --h: 132; --w: 28; --c: #2f3a4a"></span>
+        <span class="spine spine-extra" style="--x: 2vw; --d: 1.48s; --r: -7deg; --h: 126; --w: 26; --c: #a36b4f"></span>
+        <span class="spine" style="--x: -4vw; --d: 0.40s; --r: -16deg; --h: 116; --w: 22; --c: #c2a77f"></span>
+        <span class="spine" style="--x: 6vw; --d: 1.55s; --r: 10deg; --h: 142; --w: 34; --c: #9b4e3c"></span>
+        <span class="spine spine-extra" style="--x: -2vw; --d: 0.70s; --r: 8deg; --h: 144; --w: 30; --c: #7f8f6a"></span>
+        <span class="spine spine-lean" style="--x: 7vw; --d: 0.88s; --r: -12deg; --h: 136; --w: 30; --c: #8a96a8"></span>
+      </div>
     </section>
 
     <!-- Tour: the phone stays pinned while four screens scroll by, each with a callout, alternating left and right.
-         TODO: replace each .screen placeholder with a real screenshot, then adjust --x/--y
-         (percent of the phone's width/height) so each line lands on the right spot. -->
+         Screens are simulator captures of the app (iPhone 17 Pro, sample data), light and dark, in the page’s language.
+         --x/--y place each callout's dot, in percent of the phone's width/height.
+         Refresh them with scripts/capture-screens.sh en (and fr for the French page). -->
     <section class="tour" style="--steps: 4" aria-labelledby="tour-heading">
       <h2 class="sr-only" id="tour-heading">How Reliure works</h2>
       <div class="stage">
         <div class="device">
-          <div class="screen is-active" data-step="0" aria-hidden="true"><span>Screenshot<br>Home</span></div>
-          <div class="screen" data-step="1" aria-hidden="true"><span>Screenshot<br>Continue reading</span></div>
-          <div class="screen" data-step="2" aria-hidden="true"><span>Screenshot<br>Add a book</span></div>
-          <div class="screen" data-step="3" aria-hidden="true"><span>Screenshot<br>Statistics</span></div>
-          <div class="callout is-active" data-step="0" style="--x: 30; --y: 62">
+          <div class="screen is-active" data-step="0" aria-hidden="true"><picture><source srcset="assets/screens/en/home-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="assets/screens/en/home-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="assets/screens/en/home.avif" type="image/avif"><img src="assets/screens/en/home.webp" width="750" height="1630" alt="" decoding="async"></picture></div>
+          <div class="screen" data-step="1" aria-hidden="true"><picture><source srcset="assets/screens/en/update-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="assets/screens/en/update-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="assets/screens/en/update.avif" type="image/avif"><img src="assets/screens/en/update.webp" width="750" height="1630" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="screen" data-step="2" aria-hidden="true"><picture><source srcset="assets/screens/en/add-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="assets/screens/en/add-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="assets/screens/en/add.avif" type="image/avif"><img src="assets/screens/en/add.webp" width="750" height="1630" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="screen" data-step="3" aria-hidden="true"><picture><source srcset="assets/screens/en/statistics-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="assets/screens/en/statistics-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="assets/screens/en/statistics.avif" type="image/avif"><img src="assets/screens/en/statistics.webp" width="750" height="1630" alt="" loading="lazy" decoding="async"></picture></div>
+          <div class="callout is-active" data-step="0" style="--x: 24; --y: 33">
             <div class="callout-text"><h3>Home</h3><p>Your current book and your whole library, the moment you open the app.</p></div>
             <span class="callout-line" aria-hidden="true"></span>
             <span class="callout-dot" aria-hidden="true"></span>
           </div>
-          <div class="callout callout-right" data-step="1" style="--x: 50; --y: 47">
+          <div class="callout callout-right" data-step="1" style="--x: 63; --y: 40">
             <div class="callout-text"><h3>Keep reading</h3><p>Update your page in a tap. Every update is saved as a reading session.</p></div>
             <span class="callout-line" aria-hidden="true"></span>
             <span class="callout-dot" aria-hidden="true"></span>
           </div>
-          <div class="callout" data-step="2" style="--x: 50; --y: 32">
+          <div class="callout" data-step="2" style="--x: 50; --y: 31">
             <div class="callout-text"><h3>Add a book, easily</h3><p>Scan the barcode and it’s on your shelf. Or search by title, author or ISBN.</p></div>
             <span class="callout-line" aria-hidden="true"></span>
             <span class="callout-dot" aria-hidden="true"></span>
           </div>
-          <div class="callout callout-right" data-step="3" style="--x: 35; --y: 55">
+          <div class="callout callout-right" data-step="3" style="--x: 48; --y: 61">
             <div class="callout-text"><h3>Statistics</h3><p>Pages read, sessions and streaks, by week, month or year.</p></div>
             <span class="callout-line" aria-hidden="true"></span>
             <span class="callout-dot" aria-hidden="true"></span>
@@ -141,7 +166,7 @@
 
     <section class="closing">
       <h2>Keep the story going.</h2>
-      <p class="cta cta-soon"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Coming soon to the App Store</span></p>
+      <p class="cta cta-soon"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Coming soon to the App Store</span><span class="cta-progress" aria-hidden="true"><span></span></span></p>
     </section>
   </main>
 
