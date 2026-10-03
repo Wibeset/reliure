@@ -569,6 +569,52 @@ h1 em { color: var(--text-secondary); }
   line-height: 1;
 }
 
+/* Legal pages (privacy policy) */
+
+.legal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 96px 20px 0;
+}
+
+.legal h1 { max-width: none; font-size: clamp(44px, 7vw, 88px); }
+
+.legal .updated {
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.legal .lede {
+  margin-top: 40px;
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+
+.legal h2 {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--surface-secondary);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(26px, 3vw, 32px);
+  line-height: 1.15;
+}
+
+.legal p, .legal li {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.legal p { margin-top: 16px; }
+.legal ul { margin: 16px 0 0; padding-left: 1.2em; }
+.legal li + li { margin-top: 8px; }
+.legal strong { font-weight: 600; color: var(--text); }
+.legal a { text-underline-offset: 3px; }
+
 /* Footer */
 
 footer {
@@ -663,7 +709,7 @@ footer {
   .brand { gap: 10px; font-size: 32px; }
   .brand img { width: 42px; height: 42px; }
   .nav nav { gap: 14px; }
-  .hero { padding-top: 56px; }
+  .hero, .legal { padding-top: 56px; }
   .mission, .features, .faq, .closing { padding-top: 112px; }
   .cta { padding: 16px 22px; font-size: 17px; gap: 8px; }
   .cta-icon { width: 20px; height: 20px; }
