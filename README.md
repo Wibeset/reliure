@@ -23,11 +23,11 @@ Reliure is an iPhone app for keeping track of the books you read. It's built aro
 ## What you can do
 
 - **Add a book in seconds.** Scan the ISBN barcode, search by title or author, or type the ISBN yourself.
-- **Keep your library in order.** To read, reading and read, plus a wishlist with links to bookstores.
-- **Pick up where you left off.** Your current book waits on the home screen with your page and progress.
+- **Keep your library in order.** To read, reading, read and abandoned, books to reread, plus a wishlist with links to bookstores.
+- **Pick up where you left off.** Your current book waits on the home screen with your page and progress, and on your Home Screen and Lock Screen with widgets.
 - **Update your page in a tap.** Enter a page or a percentage, or nudge it with + and −. Every update is saved as a reading session.
 - **Remember what moved you.** Notes, quotes and ratings, overall or by theme, so a book stays with you after the last page.
-- **Watch the habit grow.** Pages read, sessions and reading streaks, by week, month or year, and a reading calendar of the books you read each day.
+- **Watch the habit grow.** Pages read, sessions and reading streaks, by week, month or year, a yearly reading goal, and a reading calendar of the books you read each day.
 - **Share what you read.** A book or a month of reading as an image, for a post or a story.
 - **Keep your library yours.** Back it up to a file, restore it on a new iPhone, or export it to CSV for Goodreads and StoryGraph.
 
@@ -48,9 +48,9 @@ Reliure is coming to the App Store for iPhone.
 Reliure est une app iPhone pour suivre les livres que vous lisez. Scannez vos livres, notez où vous en êtes et suivez vos progrès, sans compte.
 
 - **Ajoutez un livre en quelques secondes** : scannez le code-barres ISBN, cherchez par titre ou auteur, ou entrez l’ISBN.
-- **Reprenez là où vous en étiez** : votre livre en cours, votre page et votre progression, dès l’ouverture.
+- **Reprenez là où vous en étiez** : votre livre en cours, votre page et votre progression, dès l’ouverture, et sur votre écran d’accueil et votre écran verrouillé grâce aux widgets.
 - **Mettez à jour votre page d’un geste** : chaque mise à jour devient une session de lecture.
-- **Gardez vos notes et évaluations**, et suivez vos pages lues, sessions, séries de jours et votre calendrier de lecture.
+- **Gardez vos notes et évaluations**, et suivez vos pages lues, sessions, séries de jours, votre objectif de lecture annuel et votre calendrier de lecture.
 - **Partagez vos lectures** en image, et **sauvegardez ou exportez votre bibliothèque** (fichier Reliure ou CSV pour Goodreads et StoryGraph).
 
 [reliure.me/fr](https://reliure.me/fr/)

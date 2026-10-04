@@ -487,10 +487,22 @@ h1 em { color: var(--text-secondary); }
   text-align: center;
 }
 
+.feature-icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 16px;
+  fill: none;
+  stroke: var(--progress);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .features h3 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(30px, 3.6vw, 42px);
+  font-size: clamp(24px, 2.6vw, 30px);
   line-height: 1.05;
 }
 
