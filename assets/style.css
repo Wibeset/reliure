@@ -569,7 +569,7 @@ h1 em { color: var(--text-secondary); }
   line-height: 1;
 }
 
-/* Legal pages (privacy policy) */
+/* Legal pages (privacy policy, support) */
 
 .legal {
   max-width: 800px;
@@ -614,6 +614,18 @@ h1 em { color: var(--text-secondary); }
 .legal li + li { margin-top: 8px; }
 .legal strong { font-weight: 600; color: var(--text); }
 .legal a { text-underline-offset: 3px; }
+
+/* The home page FAQ, reused inside a legal page (support). */
+.legal .faq { max-width: none; margin: 0; padding-top: 8px; }
+.legal .faq details p { margin-top: 0; }
+.faq details ol {
+  margin: 0;
+  padding: 0 0 16px 1.2em;
+  max-width: 40em;
+  font-size: 17px;
+  color: var(--text-secondary);
+}
+.faq details li + li { margin-top: 8px; }
 
 /* Footer */
 

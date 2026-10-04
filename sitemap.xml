@@ -24,4 +24,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/confidentialite/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/privacy/"/>
   </url>
+  <url>
+    <loc>https://reliure.me/support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/assistance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/support/"/>
+  </url>
+  <url>
+    <loc>https://reliure.me/fr/assistance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/support/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/assistance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/support/"/>
+  </url>
 </urlset>
