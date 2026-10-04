@@ -1,8 +1,8 @@
 #!/bin/sh
-# Captures the four tour screens from the iOS app in the simulator, light and dark,
+# Captures the six tour screens from the iOS app in the simulator, light and dark,
 # and writes them as AVIF + WebP to assets/screens/<lang>/.
 #
-#   scripts/capture-screens.sh fr      # or: en (once the app has an English UI)
+#   scripts/capture-screens.sh fr      # or: en
 #
 # Needs Xcode, ../reliure-ios, and cwebp + avifenc (brew install webp libavif).
 set -eu
@@ -32,7 +32,7 @@ trap 'xcrun simctl status_bar booted clear; rm -rf "$TMP"' EXIT
 
 mkdir -p "$OUT"
 # Site name → app debug screen ("" is the home screen the app opens on).
-for pair in home: update:update add:add statistics:statistics; do
+for pair in home: update:update add:add statistics:statistics calendar:calendar share:share; do
   name=${pair%%:*} screen=${pair#*:}
   for appearance in light dark; do
     suffix=$([ "$appearance" = dark ] && echo -dark || true)

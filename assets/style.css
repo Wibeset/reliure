@@ -469,7 +469,7 @@ h1 em { color: var(--text-secondary); }
   text-align: center;
 }
 
-/* Features: four short blocks, two by two. */
+/* Features: six short blocks, two by two. */
 
 .features {
   max-width: 1080px;
