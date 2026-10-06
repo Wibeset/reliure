@@ -1,5 +1,5 @@
 #!/bin/sh
-# Captures the six tour screens from the iOS app in the simulator, light and dark,
+# Captures the seven tour screens from the iOS app in the simulator, light and dark,
 # and writes them as AVIF + WebP to assets/screens/<lang>/.
 #
 #   scripts/capture-screens.sh fr      # or: en
@@ -43,12 +43,14 @@ mkdir -p "$OUT"
 # A goal the sample library is on track for, so the goal card shows progress rather than an invitation.
 GOAL=${GOAL:-3}
 # Site name → app debug screen ("" is the home screen the app opens on).
-for pair in home: update:update add:add statistics:statistics calendar:calendar share:share; do
+for pair in home: update:update add:add statistics:statistics calendar:calendar milestones:milestones share:share; do
   name=${pair%%:*} screen=${pair#*:}
+  # The milestones need a year of history to show more than a few badges.
+  extra=$([ "$name" = milestones ] && echo -seedYearInReview || true)
   for appearance in light dark; do
     suffix=$([ "$appearance" = dark ] && echo -dark || true)
     xcrun simctl terminate "$UDID" "$BUNDLE" 2>/dev/null || true
-    xcrun simctl launch "$UDID" "$BUNDLE" -seedSampleData -inMemoryStore \
+    xcrun simctl launch "$UDID" "$BUNDLE" -seedSampleData $extra -inMemoryStore \
       -"readingGoal.$(date +%Y)" "$GOAL" -appearance "$appearance" \
       -AppleLanguages "($LANG_CODE)" -AppleLocale "$LOCALE" ${screen:+-debugScreen "$screen"} >/dev/null
     sleep 5

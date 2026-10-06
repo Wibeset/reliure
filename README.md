@@ -28,6 +28,7 @@ Reliure is an iPhone app for keeping track of the books you read. It's built aro
 - **Update your page in a tap.** Enter a page or a percentage, or nudge it with + and −. Every update is saved as a reading session.
 - **Remember what moved you.** Notes, quotes and ratings, overall or by theme, so a book stays with you after the last page.
 - **Watch the habit grow.** Pages read, sessions and reading streaks, by week, month or year, a yearly reading goal, and a reading calendar of the books you read each day.
+- **Play along.** Twelve reading levels, milestones to unlock, a challenge each month, and a streak that forgives a day off each week.
 - **Share what you read.** A book, a month of reading or your whole year in reading as an image, for a post or a story.
 - **Keep your library yours.** Back it up to a file, restore it on a new iPhone, or export it to CSV for Goodreads and StoryGraph.
 
@@ -51,7 +52,8 @@ Reliure est une app iPhone pour suivre les livres que vous lisez. Scannez vos li
 - **Reprenez là où vous en étiez** : votre livre en cours, votre page et votre progression, dès l’ouverture, et sur votre écran d’accueil et votre écran verrouillé grâce aux widgets.
 - **Mettez à jour votre page d’un geste** : chaque mise à jour devient une session de lecture.
 - **Gardez vos notes et évaluations**, et suivez vos pages lues, sessions, séries de jours, votre objectif de lecture annuel et votre calendrier de lecture.
-- **Partagez vos lectures** en image, jusqu’à votre bilan de l’année, et **sauvegardez ou exportez votre bibliothèque** (fichier Reliure ou CSV pour Goodreads et StoryGraph).
+- **Montez de niveau** : douze niveaux de lecteur, des jalons à débloquer et un défi chaque mois.
+- **Partagez vos lectures** en image, jusqu’à vos jalons et votre bilan de l’année, et **sauvegardez ou exportez votre bibliothèque** (fichier Reliure ou CSV pour Goodreads et StoryGraph).
 
 [reliure.me/fr](https://reliure.me/fr/)
 
