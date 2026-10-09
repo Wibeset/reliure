@@ -469,7 +469,7 @@ h1 em { color: var(--text-secondary); }
   text-align: center;
 }
 
-/* Features: six short blocks, two by two. */
+/* Features: six short blocks, three by two, each under a hairline. */
 
 .features {
   max-width: 1080px;
@@ -482,16 +482,20 @@ h1 em { color: var(--text-secondary); }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px 80px;
-  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 72px 48px;
+}
+
+.features li {
+  padding-top: 28px;
+  border-top: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
 }
 
 .feature-icon {
   display: block;
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 16px;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 22px;
   fill: none;
   stroke: var(--progress);
   stroke-width: 1.4;
@@ -502,14 +506,13 @@ h1 em { color: var(--text-secondary); }
 .features h3 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(24px, 2.6vw, 30px);
-  line-height: 1.05;
+  font-size: clamp(24px, 2.4vw, 28px);
+  line-height: 1.08;
 }
 
 .features li p {
-  max-width: 26em;
-  margin: 8px auto 0;
-  font-size: 17px;
+  margin: 10px 0 0;
+  font-size: 16.5px;
   color: var(--text-secondary);
 }
 
@@ -723,6 +726,7 @@ footer {
   .callout-text p { font-size: 15px; }
   .callout-line { display: none; }
   .callout .callout-dot { left: calc(var(--x) * 1%); top: calc(var(--y) * 1%); right: auto; margin: -6px 0 0 -6px; }
+  .features ul { grid-template-columns: 1fr 1fr; }
 }
 
 /* Small screens */
