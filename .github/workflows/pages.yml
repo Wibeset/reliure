@@ -24,11 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Publish only the site itself, not the README or workflow files.
+      # Publish the whole repository except what isn't part of the site,
+      # so a new page or root file can't be left out by mistake.
       - name: Assemble site
         run: |
           mkdir _site
-          cp -R index.html 404.html fr assets CNAME .nojekyll robots.txt sitemap.xml _site/
+          rsync -a --exclude .git --exclude .github --exclude _site --exclude README.md --exclude scripts ./ _site/
 
       - uses: actions/configure-pages@v5
 

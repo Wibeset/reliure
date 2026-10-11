@@ -712,6 +712,21 @@ main:has(.shop) + footer { margin-top: 64px; }
 .legal strong { font-weight: 600; color: var(--text); }
 .legal a { text-underline-offset: 3px; }
 
+/* Comparison table (Goodreads alternative page): scrolls sideways on narrow screens. */
+.table-scroll { margin-top: 24px; overflow-x: auto; }
+.compare { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 16px; }
+.compare th, .compare td {
+  padding: 12px 12px 12px 0;
+  border-bottom: 1px solid var(--surface-secondary);
+  text-align: left;
+  vertical-align: top;
+}
+.compare thead th { font-weight: 600; color: var(--text); }
+.compare tbody th { font-weight: 400; color: var(--text-secondary); }
+.compare td { color: var(--text-secondary); }
+.compare td:first-of-type { color: var(--text); font-weight: 600; }
+.legal .note { font-size: 14px; }
+
 /* The home page FAQ, reused inside a legal page (support). */
 .legal .faq { max-width: none; margin: 0; padding-top: 8px; }
 .legal .faq details p { margin-top: 0; }

@@ -1,0 +1,29 @@
+# Reliure
+
+> Reliure is a free reading tracker app for iPhone, in English and French. Scan your books, log your pages, keep quotes, notes and ratings, and see your reading statistics and calendar. No account, no ads: your library is stored on your iPhone. Made by Wibeset in Canada.
+
+Key facts:
+
+- Platform: iPhone only (not available on Android or the web). Coming soon to the App Store.
+- Price: free, with no ads, no subscription and no account.
+- Privacy: the library, reading sessions, notes and ratings are stored on the device; the developer never receives them.
+- Adding books: scan the ISBN barcode, search by title or author, or enter a book by hand. Book details come from Google Books, Open Library and the Bibliothèque nationale de France.
+- Progress: enter a page or a percentage; each update is saved as a reading session that feeds statistics, streaks and a yearly reading goal.
+- Formats: designed for print books, tracked by page.
+- Offline: everything works without a connection, except looking up a book online.
+- Goodreads: imports a Goodreads library (CSV) and exports in the Goodreads CSV format, which Goodreads and StoryGraph can import.
+- Backups: included in iCloud device backups; a Reliure backup file can also be exported and restored on another iPhone.
+
+## Pages
+
+- [Home](https://reliure.me/): features and frequently asked questions
+- [Goodreads alternative](https://reliure.me/goodreads-alternative/): how Reliure compares with Goodreads and StoryGraph, and how to move from Goodreads
+- [Support](https://reliure.me/support/): contact, backups, barcode scanning, missing books, exports
+- [Privacy policy](https://reliure.me/privacy/): what information the app handles
+
+## Français
+
+- [Accueil](https://reliure.me/fr/)
+- [Alternative à Goodreads](https://reliure.me/fr/alternative-goodreads/)
+- [Assistance](https://reliure.me/fr/assistance/)
+- [Politique de confidentialité](https://reliure.me/fr/confidentialite/)

@@ -2,38 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://reliure.me/</loc>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/"/>
   </url>
   <url>
     <loc>https://reliure.me/fr/</loc>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/"/>
   </url>
   <url>
     <loc>https://reliure.me/privacy/</loc>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/privacy/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/confidentialite/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/privacy/"/>
   </url>
   <url>
     <loc>https://reliure.me/fr/confidentialite/</loc>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/privacy/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/confidentialite/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/privacy/"/>
   </url>
   <url>
     <loc>https://reliure.me/support/</loc>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/support/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/assistance/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/support/"/>
   </url>
   <url>
     <loc>https://reliure.me/fr/assistance/</loc>
+    <lastmod>2026-10-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/support/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/assistance/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/support/"/>
+  </url>
+  <url>
+    <loc>https://reliure.me/goodreads-alternative/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/goodreads-alternative/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/alternative-goodreads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/goodreads-alternative/"/>
+  </url>
+  <url>
+    <loc>https://reliure.me/fr/alternative-goodreads/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/goodreads-alternative/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/alternative-goodreads/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/goodreads-alternative/"/>
   </url>
 </urlset>
