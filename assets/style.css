@@ -122,16 +122,9 @@ section { padding: 0 20px; }
 .nav nav a { color: var(--text-secondary); text-decoration: none; }
 .nav nav a:hover { color: var(--text); }
 
-.qr {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 10px;
-  border: 1px dashed var(--text-secondary);
-  font-size: 11px;
-  font-weight: 600;
-}
+/* QR code of the App Store link, for desktop visitors to scan with their iPhone. Its white quiet zone is part of the image. */
+.qr { display: flex; }
+.qr img { width: 56px; height: 56px; border-radius: 6px; }
 
 /* Hero */
 
@@ -278,17 +271,7 @@ h1 em { color: var(--text-secondary); }
   box-shadow: 0 12px 32px color-mix(in srgb, var(--progress) 45%, transparent);
 }
 
-/* Pre-launch badge: same shape as the button, but visibly not clickable. */
-.cta-soon {
-  background: color-mix(in srgb, var(--progress) 16%, transparent);
-  color: var(--text);
-  box-shadow: none;
-  cursor: default;
-}
-
-.cta-soon:hover { transform: none; filter: none; box-shadow: none; }
-
-.cta-soon .cta-icon { color: var(--progress); }
+.cta-icon { color: var(--progress); }
 
 /* Mini reading-progress bar in the pre-launch badge: fills once on load, almost to the end. */
 .cta-progress {
@@ -853,7 +836,6 @@ footer {
   .nav { padding: 16px; }
   .brand { gap: 8px; font-size: 28px; }
   .brand img { width: 36px; height: 36px; }
-  .cta-progress { display: none; }
   /* Fewer books so the shelf fits a 320 px screen. */
   .spine-extra { display: none; }
   .nav nav { gap: 4px; }

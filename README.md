@@ -38,7 +38,7 @@ No account, no sign-up. Your library is stored on your iPhone.
 
 ## Download
 
-Reliure is coming to the App Store for iPhone.
+[Download Reliure on the App Store](https://apps.apple.com/app/id6818318860) for iPhone.
 
 ---
 

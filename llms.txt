@@ -4,7 +4,7 @@
 
 Key facts:
 
-- Platform: iPhone only (not available on Android or the web). Coming soon to the App Store.
+- Platform: iPhone only (not available on Android or the web). Available on the App Store: https://apps.apple.com/app/id6818318860
 - Price: free, with no ads, no subscription and no account.
 - Privacy: the library, reading sessions, notes and ratings are stored on the device; the developer never receives them.
 - Adding books: scan the ISBN barcode, search by title or author, or enter a book by hand. Book details come from Google Books, Open Library and the Bibliothèque nationale de France.
