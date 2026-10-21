@@ -9,20 +9,17 @@
   <link rel="alternate" hreflang="en" href="https://reliure.me/">
   <link rel="alternate" hreflang="fr" href="https://reliure.me/fr/">
   <link rel="alternate" hreflang="x-default" href="https://reliure.me/">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f1012" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0b">
   <meta name="apple-itunes-app" content="app-id=6818318860">
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="manifest" href="../site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Font loads without blocking render; a size-matched fallback (see style.css) avoids layout shift. -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap">
   <link rel="stylesheet" href="../assets/style.min.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Reliure">
@@ -36,232 +33,95 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Reliure — Toutes vos lectures, reliées">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MobileApplication", "name": "Reliure", "description": "Reliure est une app iPhone gratuite pour suivre vos lectures. Scannez vos livres, notez vos pages, gardez notes et évaluations et suivez vos statistiques. Sans compte, sans pub.", "operatingSystem": "iOS", "applicationCategory": "LifestyleApplication", "inLanguage": "fr", "url": "https://reliure.me/fr/", "image": "https://reliure.me/assets/og-fr.png", "installUrl": "https://apps.apple.com/app/id6818318860", "publisher": {"@id": "https://reliure.me/#organization"}, "@id": "https://reliure.me/fr/#app", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CAD"}, "featureList": ["Ajout de livres par scan du code-barres ISBN, recherche par titre ou auteur, ou à la main", "Import d’une bibliothèque Goodreads", "Suivi de la page en cours et des sessions de lecture", "Citations gardées à partir d’une page photographiée", "Notes et évaluations, globales ou par thème", "Statistiques de lecture, séries de jours et objectif annuel", "Calendrier de lecture", "Douze niveaux de lecteur, jalons et défi mensuel", "Partage d’un livre, d’un mois ou de votre année de lecture en image", "Widgets pour l’écran d’accueil et l’écran verrouillé", "Fichier de sauvegarde, restauration et export CSV pour Goodreads et StoryGraph"], "screenshot": ["https://reliure.me/assets/screens/fr/home.webp", "https://reliure.me/assets/screens/fr/update.webp", "https://reliure.me/assets/screens/fr/add.webp", "https://reliure.me/assets/screens/fr/statistics.webp", "https://reliure.me/assets/screens/fr/calendar.webp", "https://reliure.me/assets/screens/fr/milestones.webp", "https://reliure.me/assets/screens/fr/share.webp"]}, {"@type": "FAQPage", "inLanguage": "fr", "mainEntity": [{"@type": "Question", "name": "Qu’est-ce que Reliure ?", "acceptedAnswer": {"@type": "Answer", "text": "Reliure est une app iPhone pour suivre les livres que vous lisez : votre bibliothèque, votre page en cours, vos sessions de lecture, vos notes, vos évaluations, vos statistiques et votre calendrier de lecture."}}, {"@type": "Question", "name": "Faut-il créer un compte ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Reliure fonctionne sans compte ni inscription, et votre bibliothèque est enregistrée sur votre iPhone."}}, {"@type": "Question", "name": "Reliure est-il gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Reliure est gratuit, sans publicité, sans abonnement et sans compte. Certains liens vers des librairies, comme Amazon, peuvent être des liens affiliés : nous pouvons toucher une petite commission, sans frais pour vous."}}, {"@type": "Question", "name": "Comment ajouter un livre ?", "acceptedAnswer": {"@type": "Answer", "text": "Scannez le code-barres ISBN avec l’appareil photo, cherchez par titre ou auteur, ou entrez l’ISBN à la main. Reliure récupère les informations du livre dans Google Books, Open Library et le catalogue de la Bibliothèque nationale de France."}}, {"@type": "Question", "name": "Comment suivre ma progression ?", "acceptedAnswer": {"@type": "Answer", "text": "Entrez votre page en cours ou un pourcentage, ou ajustez avec + et −. Chaque mise à jour devient une session de lecture, qui alimente vos statistiques et vos séries de jours."}}, {"@type": "Question", "name": "Et si je change ou perds mon iPhone ?", "acceptedAnswer": {"@type": "Answer", "text": "Votre bibliothèque fait partie des sauvegardes iCloud de votre iPhone. Vous pouvez aussi exporter en tout temps un fichier de sauvegarde Reliure, avec vos livres, sessions, citations, notes et couvertures, et le restaurer sur un autre iPhone. L’app vous rappelle discrètement de faire une sauvegarde, sans notification."}}, {"@type": "Question", "name": "Puis-je emporter mes livres dans une autre app ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Reliure exporte votre bibliothèque dans un fichier CSV au format Goodreads, que Goodreads et StoryGraph peuvent importer."}}, {"@type": "Question", "name": "Puis-je importer ma bibliothèque Goodreads ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Exportez votre bibliothèque Goodreads en fichier CSV, puis importez ce fichier dans Reliure."}}, {"@type": "Question", "name": "Puis-je partager mes lectures ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Partagez un livre, une citation, votre calendrier, un jalon ou votre année de lecture en image, carrée pour une publication ou verticale pour une story, avec Instagram, Messages ou toute autre app de votre iPhone."}}, {"@type": "Question", "name": "En quelles langues Reliure est-il offert ?", "acceptedAnswer": {"@type": "Answer", "text": "En français et en anglais."}}, {"@type": "Question", "name": "Reliure est-il offert sur Android ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Reliure est offert sur iPhone."}}, {"@type": "Question", "name": "Reliure fonctionne-t-il hors ligne ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Tout fonctionne sans connexion, sauf la recherche d’un livre en ligne par code-barres, titre ou auteur. Vous pouvez toujours ajouter un livre à la main."}}, {"@type": "Question", "name": "Puis-je suivre des livres numériques ou audio ?", "acceptedAnswer": {"@type": "Answer", "text": "Reliure est pensé pour les livres imprimés, avec une progression suivie à la page."}}]}, {"@type": "WebSite", "@id": "https://reliure.me/#website", "url": "https://reliure.me/", "name": "Reliure", "inLanguage": ["en", "fr"], "publisher": {"@id": "https://reliure.me/#organization"}}, {"@type": "Organization", "@id": "https://reliure.me/#organization", "name": "Wibeset", "logo": "https://reliure.me/assets/icon.png", "email": "hello@wibeset.ca", "address": {"@type": "PostalAddress", "addressCountry": "CA"}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MobileApplication", "name": "Reliure", "description": "Reliure est une app iPhone gratuite pour suivre vos lectures. Scannez vos livres, notez vos pages, gardez notes et évaluations et suivez vos statistiques. Sans compte, sans pub.", "operatingSystem": "iOS", "applicationCategory": "LifestyleApplication", "inLanguage": "fr", "url": "https://reliure.me/fr/", "image": "https://reliure.me/assets/og-fr.png", "installUrl": "https://apps.apple.com/app/id6818318860", "publisher": {"@id": "https://reliure.me/#organization"}, "@id": "https://reliure.me/fr/#app", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CAD"}, "featureList": ["Ajout de livres par scan du code-barres ISBN, recherche par titre ou auteur, ou à la main", "Import d’une bibliothèque Goodreads", "Suivi de la page en cours et des sessions de lecture", "Citations gardées à partir d’une page photographiée", "Notes et évaluations, globales ou par thème", "Statistiques de lecture, séries de jours et objectif annuel", "Calendrier de lecture", "Douze niveaux de lecteur, jalons et défi mensuel", "Partage d’un livre, d’un mois ou de votre année de lecture en image", "Widgets pour l’écran d’accueil et l’écran verrouillé", "Fichier de sauvegarde, restauration et export CSV pour Goodreads et StoryGraph"], "screenshot": ["https://reliure.me/assets/screens/fr/home.webp", "https://reliure.me/assets/screens/fr/update.webp", "https://reliure.me/assets/screens/fr/add.webp", "https://reliure.me/assets/screens/fr/statistics.webp", "https://reliure.me/assets/screens/fr/calendar.webp", "https://reliure.me/assets/screens/fr/milestones.webp", "https://reliure.me/assets/screens/fr/share.webp"]}, {"@type": "FAQPage", "inLanguage": "fr", "mainEntity": [{"@type": "Question", "name": "Qu’est-ce que Reliure ?", "acceptedAnswer": {"@type": "Answer", "text": "Reliure est une app iPhone pour suivre les livres que vous lisez : votre bibliothèque, votre page en cours, vos sessions de lecture, vos notes, vos évaluations, vos statistiques et votre calendrier de lecture."}}, {"@type": "Question", "name": "Faut-il créer un compte ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Reliure fonctionne sans compte ni inscription, et votre bibliothèque est enregistrée sur votre iPhone."}}, {"@type": "Question", "name": "Reliure est-il gratuit ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Reliure est gratuit, sans publicité, sans abonnement et sans compte. Certains liens vers des librairies, comme Amazon, peuvent être des liens affiliés : nous pouvons toucher une petite commission, sans frais pour vous."}}, {"@type": "Question", "name": "Comment ajouter un livre ?", "acceptedAnswer": {"@type": "Answer", "text": "Scannez le code-barres ISBN avec l’appareil photo, cherchez par titre ou auteur, ou entrez l’ISBN à la main. Reliure récupère les informations du livre dans Google Books, Open Library et le catalogue de la Bibliothèque nationale de France."}}, {"@type": "Question", "name": "Comment suivre ma progression ?", "acceptedAnswer": {"@type": "Answer", "text": "Entrez votre page en cours ou un pourcentage, ou ajustez avec + et −. Chaque mise à jour devient une session de lecture, qui alimente vos statistiques et vos séries de jours."}}, {"@type": "Question", "name": "Et si je change ou perds mon iPhone ?", "acceptedAnswer": {"@type": "Answer", "text": "Votre bibliothèque fait partie des sauvegardes iCloud de votre iPhone. Vous pouvez aussi exporter en tout temps un fichier de sauvegarde Reliure, avec vos livres, sessions, citations, notes et couvertures, et le restaurer sur un autre iPhone. L’app vous rappelle discrètement de faire une sauvegarde, sans notification."}}, {"@type": "Question", "name": "Puis-je emporter mes livres dans une autre app ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Reliure exporte votre bibliothèque dans un fichier CSV au format Goodreads, que Goodreads et StoryGraph peuvent importer."}}, {"@type": "Question", "name": "Puis-je importer ma bibliothèque Goodreads ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Exportez votre bibliothèque Goodreads en fichier CSV, puis importez ce fichier dans Reliure."}}, {"@type": "Question", "name": "Puis-je partager mes lectures ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Partagez un livre, une citation, votre calendrier, un jalon ou votre année de lecture en image, carrée pour une publication ou verticale pour une story, avec Instagram, Messages ou toute autre app de votre iPhone."}}, {"@type": "Question", "name": "En quelles langues Reliure est-il offert ?", "acceptedAnswer": {"@type": "Answer", "text": "En français et en anglais."}}, {"@type": "Question", "name": "Reliure est-il offert sur Android ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Reliure est offert sur iPhone."}}, {"@type": "Question", "name": "Reliure fonctionne-t-il hors ligne ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Tout fonctionne sans connexion, sauf la recherche d’un livre en ligne par code-barres, titre ou auteur. Vous pouvez toujours ajouter un livre à la main."}}, {"@type": "Question", "name": "Puis-je suivre des livres numériques ou audio ?", "acceptedAnswer": {"@type": "Answer", "text": "Reliure est pensé pour les livres imprimés, avec une progression suivie à la page."}}]}, {"@type": "WebSite", "@id": "https://reliure.me/#website", "url": "https://reliure.me/", "name": "Reliure", "inLanguage": ["en", "fr"], "publisher": {"@id": "https://reliure.me/#organization"}}, {"@type": "Organization", "@id": "https://reliure.me/#organization", "name": "Wibeset", "logo": "https://reliure.me/assets/icon.png", "email": "hello@wibeset.ca", "address": {"@type": "PostalAddress", "addressCountry": "CA"}}]}</script>
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
   <header class="nav">
-    <a class="brand" href="./"><picture><source srcset="../assets/icon-dark.png" media="(prefers-color-scheme: dark)"><img src="../assets/icon.png" width="48" height="48" alt=""></picture>Reliure</a>
-    <nav aria-label="Principale">
-      <a href="../" hreflang="en" lang="en">English</a>
-      <a href="https://apps.apple.com/app/id6818318860">App Store <span aria-hidden="true">↗</span></a>
-      <a class="qr" href="https://apps.apple.com/app/id6818318860" aria-label="Scannez pour télécharger"><img src="../assets/qr.svg" width="56" height="56" alt=""></a>
-    </nav>
+    <a class="brand" href="../fr/"><img src="../assets/icon-dark.png" width="30" height="30" alt="">Reliure <span>pour iPhone</span></a>
+    <a class="hide-small" href="../fr/assistance/">Assistance</a>
+    <a class="hide-small" href="../fr/alternative-goodreads/">Alternative à Goodreads</a>
+    <a href="../" hreflang="en" lang="en">English</a>
+    <a class="store" href="https://apps.apple.com/app/id6818318860">Disponible sur l’App Store <span aria-hidden="true">→</span></a>
   </header>
 
   <main id="main">
-    <section class="hero">
-      <h1>Toutes vos <span class="mark">lectures<svg class="swoosh" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 17C70 7 170 3 296 11" pathLength="1"/></svg></span>,<br><em>reliées.</em></h1>
-      <p class="sub">Scannez vos livres, notez où vous en êtes et suivez vos progrès. Gratuit et sans compte.</p>
-      <a class="cta" href="https://apps.apple.com/app/id6818318860"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="cta-arrow" d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg><span>Télécharger dans l’App Store</span></a>
-      <!-- Decorative shelf: books bound together, a nod to the name. -->
-      <div class="shelf" aria-hidden="true">
-        <span class="spine" style="--x: -7vw; --d: 0.62s; --r: -14deg; --h: 140; --w: 30; --c: #b5604a"></span>
-        <span class="spine" style="--x: 5vw; --d: 1.18s; --r: 9deg; --h: 118; --w: 22; --c: #e3d8c3"></span>
-        <span class="spine spine-extra" style="--x: -2vw; --d: 0.55s; --r: 11deg; --h: 134; --w: 28; --c: #6b5b7b"></span>
-        <span class="spine" style="--x: 8vw; --d: 0.30s; --r: -6deg; --h: 156; --w: 36; --c: #17212b"></span>
-        <span class="spine" style="--x: -6vw; --d: 0.95s; --r: 18deg; --h: 128; --w: 26; --c: #8d9f86"></span>
-        <span class="spine" style="--x: 2vw; --d: 1.42s; --r: -10deg; --h: 146; --w: 32; --c: #c99a3e"></span>
-        <span class="spine spine-extra" style="--x: -8vw; --d: 1.25s; --r: -9deg; --h: 120; --w: 24; --c: #d6c9a8"></span>
-        <span class="spine" style="--x: 4vw; --d: 0.48s; --r: 12deg; --h: 110; --w: 20; --c: #7a3b45"></span>
-        <span class="spine spine-ribbon" style="--x: -2vw; --d: 0.20s; --r: -4deg; --h: 162; --w: 38; --c: #5b7590"></span>
-        <span class="spine" style="--x: 6vw; --d: 1.30s; --r: 15deg; --h: 124; --w: 24; --c: #d9b8ad"></span>
-        <span class="spine spine-extra" style="--x: -4vw; --d: 0.35s; --r: 14deg; --h: 152; --w: 32; --c: #3e5a73"></span>
-        <span class="spine" style="--x: 8vw; --d: 0.78s; --r: -8deg; --h: 150; --w: 30; --c: #4b6a5e"></span>
-        <span class="spine" style="--x: -8vw; --d: 1.05s; --r: 6deg; --h: 132; --w: 28; --c: #2f3a4a"></span>
-        <span class="spine spine-extra" style="--x: 2vw; --d: 1.48s; --r: -7deg; --h: 126; --w: 26; --c: #a36b4f"></span>
-        <span class="spine" style="--x: -4vw; --d: 0.40s; --r: -16deg; --h: 116; --w: 22; --c: #c2a77f"></span>
-        <span class="spine" style="--x: 6vw; --d: 1.55s; --r: 10deg; --h: 142; --w: 34; --c: #9b4e3c"></span>
-        <span class="spine spine-extra" style="--x: -2vw; --d: 0.70s; --r: 8deg; --h: 144; --w: 30; --c: #7f8f6a"></span>
-        <span class="spine spine-lean" style="--x: 7vw; --d: 0.88s; --r: -12deg; --h: 136; --w: 30; --c: #8a96a8"></span>
-      </div>
+    <section class="hero reveal">
+      <svg class="doodle side" viewBox="0 0 200 170" style="left: calc(50% - 720px); top: -130px; width: 170px;" aria-hidden="true"><path pathLength="1" d="M100 40C76 26 40 24 12 34V150C40 140 76 142 100 156C124 142 160 140 188 150V34C160 24 124 26 100 40ZM100 40V156M28 60C48 54 68 56 86 62M28 82C48 76 68 78 86 84M28 104C48 98 68 100 86 106M114 62C132 56 152 54 172 60M114 84C132 78 152 76 172 82M114 106C132 100 152 98 172 104M100 40C112 20 136 8 160 10"/></svg>
+      <svg class="doodle side" viewBox="0 0 200 190" style="left: calc(50% - 480px); top: 160px; width: 140px;" aria-hidden="true"><path pathLength="1" d="M20 150L176 146 178 176 22 180ZM30 112L168 120 166 148 28 140ZM14 76L172 70 174 104 16 110ZM40 150 42 178M150 146 152 176M44 116 42 142M144 120 142 146M36 74 38 108M156 70 158 104M120 72V40L130 50 140 40V71"/></svg>
+      <svg class="doodle side" viewBox="0 -24 160 210" style="left: calc(50% + 360px); top: 10px; width: 110px;" aria-hidden="true"><path pathLength="1" d="M70 10H130V180L100 150 70 180ZM100 10C108 -14 124 -20 138 -8M86 40H114M86 60H108"/></svg>
+      <h1>Toutes vos <em class="swash">lectures</em>, reliées</h1>
+      <div class="ctas"><a class="pill" href="https://apps.apple.com/app/id6818318860">Disponible sur l’App Store <span aria-hidden="true">→</span></a><span class="pill soon">Android, bientôt</span></div>
+      <p class="free">Gratuit. Sans compte, sans pub, sans abonnement.</p>
     </section>
 
-    <!-- Tour: the phone stays pinned while six screens scroll by, each with a callout, alternating left and right.
-         Screens are simulator captures of the app (iPhone 17 Pro, sample data), light and dark, in the page’s language.
-         --x/--y place each callout's dot, in percent of the phone's width/height.
-         Refresh them with scripts/capture-screens.sh fr (and en for the English page). -->
-    <section class="tour" style="--steps: 7" aria-labelledby="tour-heading">
-      <h2 class="sr-only" id="tour-heading">Comment fonctionne Reliure</h2>
-      <div class="stage">
-        <div class="device">
-          <div class="screen is-active" data-step="0" aria-hidden="true"><picture><source srcset="../assets/screens/fr/home-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/home-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/home.avif" type="image/avif"><img src="../assets/screens/fr/home.webp" width="750" height="1630" alt="Accueil — Votre livre en cours, votre objectif annuel et votre série de jours, dès l’ouverture de l’app." decoding="async"></picture></div>
-          <div class="screen" data-step="1" aria-hidden="true"><picture><source srcset="../assets/screens/fr/update-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/update-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/update.avif" type="image/avif"><img src="../assets/screens/fr/update.webp" width="750" height="1630" alt="Continuer la lecture — Mettez à jour votre page d’un geste. Chaque mise à jour devient une session de lecture." loading="lazy" decoding="async"></picture></div>
-          <div class="screen" data-step="2" aria-hidden="true"><picture><source srcset="../assets/screens/fr/add-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/add-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/add.avif" type="image/avif"><img src="../assets/screens/fr/add.webp" width="750" height="1630" alt="Ajouter un livre, facilement — Scannez le code-barres et le livre est dans votre bibliothèque. Ou cherchez par titre, auteur ou ISBN." loading="lazy" decoding="async"></picture></div>
-          <div class="screen" data-step="3" aria-hidden="true"><picture><source srcset="../assets/screens/fr/statistics-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/statistics-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/statistics.avif" type="image/avif"><img src="../assets/screens/fr/statistics.webp" width="750" height="1630" alt="Statistiques — Pages lues, sessions et séries de jours, par semaine, mois ou année." loading="lazy" decoding="async"></picture></div>
-          <div class="screen" data-step="4" aria-hidden="true"><picture><source srcset="../assets/screens/fr/calendar-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/calendar-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/calendar.avif" type="image/avif"><img src="../assets/screens/fr/calendar.webp" width="750" height="1630" alt="Calendrier de lecture — Chaque jour affiche le livre que vous avez lu. Votre mois d’un coup d’œil, prêt à partager." loading="lazy" decoding="async"></picture></div>
-          <div class="screen" data-step="5" aria-hidden="true"><picture><source srcset="../assets/screens/fr/milestones-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/milestones-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/milestones.avif" type="image/avif"><img src="../assets/screens/fr/milestones.webp" width="750" height="1630" alt="Jalons et niveaux — Gravissez douze niveaux de lecteur, débloquez des jalons et relevez un défi chaque mois." loading="lazy" decoding="async"></picture></div>
-          <div class="screen" data-step="6" aria-hidden="true"><picture><source srcset="../assets/screens/fr/share-dark.avif" type="image/avif" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/share-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../assets/screens/fr/share.avif" type="image/avif"><img src="../assets/screens/fr/share.webp" width="750" height="1630" alt="Partager un livre — En format carré ou en story, avec votre évaluation. Pour Instagram, Messages et ailleurs." loading="lazy" decoding="async"></picture></div>
-          <div class="callout is-active" data-step="0" style="--x: 24; --y: 33">
-            <div class="callout-text"><h3>Accueil</h3><p>Votre livre en cours, votre objectif annuel et votre série de jours, dès l’ouverture de l’app.</p></div>
-            <span class="callout-line" aria-hidden="true"></span>
-            <span class="callout-dot" aria-hidden="true"></span>
-          </div>
-          <div class="callout callout-right" data-step="1" style="--x: 63; --y: 40">
-            <div class="callout-text"><h3>Continuer la lecture</h3><p>Mettez à jour votre page d’un geste. Chaque mise à jour devient une session de lecture.</p></div>
-            <span class="callout-line" aria-hidden="true"></span>
-            <span class="callout-dot" aria-hidden="true"></span>
-          </div>
-          <div class="callout" data-step="2" style="--x: 50; --y: 31">
-            <div class="callout-text"><h3>Ajouter un livre, facilement</h3><p>Scannez le code-barres et le livre est dans votre bibliothèque. Ou cherchez par titre, auteur ou ISBN.</p></div>
-            <span class="callout-line" aria-hidden="true"></span>
-            <span class="callout-dot" aria-hidden="true"></span>
-          </div>
-          <div class="callout callout-right" data-step="3" style="--x: 48; --y: 61">
-            <div class="callout-text"><h3>Statistiques</h3><p>Pages lues, sessions et séries de jours, par semaine, mois ou année.</p></div>
-            <span class="callout-line" aria-hidden="true"></span>
-            <span class="callout-dot" aria-hidden="true"></span>
-          </div>
-          <div class="callout" data-step="4" style="--x: 63; --y: 29">
-            <div class="callout-text"><h3>Calendrier de lecture</h3><p>Chaque jour affiche le livre que vous avez lu. Votre mois d’un coup d’œil, prêt à partager.</p></div>
-            <span class="callout-line" aria-hidden="true"></span>
-            <span class="callout-dot" aria-hidden="true"></span>
-          </div>
-          <div class="callout callout-right" data-step="5" style="--x: 50; --y: 30">
-            <div class="callout-text"><h3>Jalons et niveaux</h3><p>Gravissez douze niveaux de lecteur, débloquez des jalons et relevez un défi chaque mois.</p></div>
-            <span class="callout-line" aria-hidden="true"></span>
-            <span class="callout-dot" aria-hidden="true"></span>
-          </div>
-          <div class="callout" data-step="6" style="--x: 50; --y: 67">
-            <div class="callout-text"><h3>Partager un livre</h3><p>En format carré ou en story, avec votre évaluation. Pour Instagram, Messages et ailleurs.</p></div>
-            <span class="callout-line" aria-hidden="true"></span>
-            <span class="callout-dot" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- The app, dark, in a row: captures from the simulator with sample data (scripts/capture-screens.sh). -->
+    <div class="phones reveal"><div class="device" style="--d: 0.36s"><img src="../assets/screens/fr/share-dark.webp" width="750" height="1630" alt="Partager un livre en image" loading="lazy" decoding="async"></div><div class="device" style="--d: 0.24s"><img src="../assets/screens/fr/statistics-dark.webp" width="750" height="1630" alt="Statistiques : pages lues, sessions et série" loading="lazy" decoding="async"></div><div class="device" style="--d: 0.12s"><img src="../assets/screens/fr/update-dark.webp" width="750" height="1630" alt="Mettre à jour sa page" loading="lazy" decoding="async"></div><div class="device" style="--d: 0.00s"><img src="../assets/screens/fr/home-dark.webp" width="750" height="1630" alt="L’accueil : votre livre en cours et votre objectif" decoding="async"></div><div class="device" style="--d: 0.12s"><img src="../assets/screens/fr/detail-dark.webp" width="750" height="1630" alt="La fiche d’un livre, avec sa progression et son évaluation" loading="lazy" decoding="async"></div><div class="device" style="--d: 0.24s"><img src="../assets/screens/fr/calendar-dark.webp" width="750" height="1630" alt="Le calendrier de lecture" loading="lazy" decoding="async"></div><div class="device" style="--d: 0.36s"><img src="../assets/screens/fr/milestones-dark.webp" width="750" height="1630" alt="Niveaux et jalons" loading="lazy" decoding="async"></div></div>
 
-    <section class="mission">
-      <p>Née de la conviction que les livres que nous lisons façonnent discrètement qui nous devenons, et méritent qu’on s’en souvienne.</p>
-    </section>
-
-    <section class="features" aria-labelledby="features-heading">
+    <section class="features-wrap reveal" aria-labelledby="features-heading">
+      <svg class="doodle side" viewBox="0 20 180 180" style="left: calc(50% - 650px); top: 40px; width: 150px;" aria-hidden="true"><path pathLength="1" d="M40 90H140V130C140 156 120 172 90 172S40 156 40 130ZM140 104C170 100 172 140 140 140M20 180C60 192 120 192 160 180M70 70C60 56 80 46 70 30M100 70C90 56 110 46 100 30"/></svg>
+      <svg class="doodle side" viewBox="0 50 200 90" style="left: calc(50% + 470px); top: 250px; width: 170px;" aria-hidden="true"><path pathLength="1" d="M90.0 90.0A34.0 33.0 0 1 1 22.7 91.0A34.7 34.0 0 0 1 92.0 87.0M178.0 90.0A34.0 33.0 0 1 1 110.7 91.0A34.7 34.0 0 0 1 180.0 87.0M90 86C96 78 104 78 110 86M22 86 6 70M178 86 194 70"/></svg>
       <h2 class="sr-only" id="features-heading">Fonctionnalités</h2>
-      <ul>
-          <li>
-            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5C5.5 4.5 8.5 4.5 12 6.5v13c-3.5-2-6.5-2-9-1z"/><path d="M21 5.5c-2.5-1-5.5-1-9 1v13c3.5-2 6.5-2 9-1z"/></svg>
-            <h3>Gardez chaque livre</h3>
-            <p>Scannez-le, cherchez-le ou entrez-le à la main. Votre bibliothèque grandit à chaque livre, une liste de souhaits garde les prochains, et les livres abandonnés ou à relire ont leur place.</p>
-          </li>
-          <li>
-            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg>
-            <h3>Sachez où vous en êtes</h3>
-            <p>Votre page, votre progression et votre dernière lecture, toujours à portée de main, jusque sur votre écran d’accueil et votre écran verrouillé grâce aux widgets.</p>
-          </li>
-          <li>
-            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7c-3 .8-5 3.2-5 6.5V17h4.5v-4.5H6.5"/><path d="M19 7c-3 .8-5 3.2-5 6.5V17h4.5v-4.5h-3"/></svg>
-            <h3>Souvenez-vous de ce qui vous a marqué</h3>
-            <p>Photographiez une page et sélectionnez le passage pour le garder en citation. Notes et évaluations, globales ou par thème, de l’intrigue à la fin : un livre reste avec vous bien après la dernière page.</p>
-          </li>
-          <li>
-            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M7 16v-4"/><path d="M12 16V8"/><path d="M17 16V4.5"/></svg>
-            <h3>Regardez l’habitude grandir</h3>
-            <p>Pages, sessions, séries de jours et objectif de lecture annuel montrent la place de la lecture dans vos journées. Gravissez douze niveaux de lecteur, débloquez des jalons, relevez un défi chaque mois, et chaque décembre, revoyez votre année de lecture.</p>
-          </li>
-          <li>
-            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M8.5 10.5H6v10h12v-10h-2.5"/></svg>
-            <h3>Partagez vos lectures</h3>
-            <p>Transformez un livre terminé, un mois ou toute votre année de lecture en image, pour une publication ou une story.</p>
-          </li>
-          <li>
-            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10.5h14V9"/><path d="M10 13h4"/></svg>
-            <h3>Votre bibliothèque vous appartient</h3>
-            <p>Sauvegardez-la dans un fichier, restaurez-la sur un nouvel iPhone, ou exportez-la en CSV pour Goodreads et StoryGraph.</p>
-          </li>
-      </ul>
+      <ul class="features"><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #8fb3db" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3.5" fill="currentColor" fill-opacity=".2"/><path d="M7 8v8M10 8v8M12.5 8v8M15 8v8M17 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><h3>Scan</h3><p>Ajoutez un livre par son code-barres</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #ff9f2e" aria-hidden="true"><path d="M6 3h9l4 4v14H6z" fill="currentColor" fill-opacity=".22"/><path d="M9 11h7M9 14h7M9 17h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><h3>Pages</h3><p>Votre page mise à jour d’un geste</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #b58cff" aria-hidden="true"><path d="M10 7c-3 .8-5 3.2-5 6.5V17h4.5v-4.5H6.5M19 7c-3 .8-5 3.2-5 6.5V17h4.5v-4.5h-3" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Citations</h3><p>Photographiez la page, gardez le passage</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #ffd23f" aria-hidden="true"><path d="m12 3 2.6 5.5 6 .8-4.4 4.1 1.1 6L12 16.5 6.7 19.4l1.1-6-4.4-4.1 6-.8z" fill="currentColor" fill-opacity=".3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><h3>Évaluations</h3><p>Globale ou par thème</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #4ea6ff" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" fill="currentColor" fill-opacity=".2"/><path d="M8 16v-4M12 16V8M16 16v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h3>Statistiques</h3><p>Pages, séries et objectif annuel</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #ff6f61" aria-hidden="true"><path d="M12 21c4.4 0 7-2.8 7-6.4 0-4.4-4-6.6-5-11.1-2.3 2-3.4 4.2-3.3 6.4C9 9 8.2 7.6 8.1 6.3 6 8 5 10.6 5 14.6 5 18.2 7.6 21 12 21Z" fill="currentColor" fill-opacity=".25" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><h3>Niveaux</h3><p>Douze niveaux et un défi par mois</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #5ad4e6" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3.2" fill="currentColor" fill-opacity=".2"/><rect x="8.5" y="10.5" width="7" height="5.5" rx="1.4" fill="currentColor"/></svg><h3>Widgets</h3><p>Votre livre à l’écran verrouillé</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #ff6fae" aria-hidden="true"><rect x="4.5" y="8.5" width="15" height="12.5" rx="3" fill="currentColor" fill-opacity=".22"/><path d="M12 3v11M8.5 6.5 12 3l3.5 3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Partage</h3><p>Un livre ou votre année, en image</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #3ddc97" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" fill="currentColor" fill-opacity=".22"/><path d="M9 14h6M13 11.5l2 2.5-2 2.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Goodreads</h3><p>Importez, puis exportez en tout temps</p></li><li class="reveal"><svg class="icon" viewBox="0 0 24 24" style="color: #34c77b" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="currentColor" fill-opacity=".22"/><path d="m7.8 12.3 2.8 2.8 5.6-6.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Gratuit</h3><p>Sans compte, sans pub, sans abonnement</p></li></ul>
     </section>
 
-    <section class="faq" aria-labelledby="faq-heading">
-      <h2 id="faq-heading">Questions fréquentes</h2>
-      <details>
-        <summary>Qu’est-ce que Reliure ?</summary>
-        <p>Reliure est une app iPhone pour suivre les livres que vous lisez : votre bibliothèque, votre page en cours, vos sessions de lecture, vos notes, vos évaluations, vos statistiques et votre calendrier de lecture.</p>
-      </details>
-      <details>
-        <summary>Faut-il créer un compte ?</summary>
-        <p>Non. Reliure fonctionne sans compte ni inscription, et votre bibliothèque est enregistrée sur votre iPhone.</p>
-      </details>
-      <details>
-        <summary>Reliure est-il gratuit ?</summary>
-        <p>Oui. Reliure est gratuit, sans publicité, sans abonnement et sans compte. Certains liens vers des librairies, comme Amazon, peuvent être des liens affiliés : nous pouvons toucher une petite commission, sans frais pour vous.</p>
-      </details>
-      <details>
-        <summary>Comment ajouter un livre ?</summary>
-        <p>Scannez le code-barres ISBN avec l’appareil photo, cherchez par titre ou auteur, ou entrez l’ISBN à la main. Reliure récupère les informations du livre dans Google Books, Open Library et le catalogue de la Bibliothèque nationale de France.</p>
-      </details>
-      <details>
-        <summary>Comment suivre ma progression ?</summary>
-        <p>Entrez votre page en cours ou un pourcentage, ou ajustez avec + et −. Chaque mise à jour devient une session de lecture, qui alimente vos statistiques et vos séries de jours.</p>
-      </details>
-      <details>
-        <summary>Et si je change ou perds mon iPhone ?</summary>
-        <p>Votre bibliothèque fait partie des sauvegardes iCloud de votre iPhone. Vous pouvez aussi exporter en tout temps un fichier de sauvegarde Reliure, avec vos livres, sessions, citations, notes et couvertures, et le restaurer sur un autre iPhone. L’app vous rappelle discrètement de faire une sauvegarde, sans notification.</p>
-      </details>
-      <details>
-        <summary>Puis-je emporter mes livres dans une autre app ?</summary>
-        <p>Oui. Reliure exporte votre bibliothèque dans un fichier CSV au format Goodreads, que Goodreads et StoryGraph peuvent importer.</p>
-      </details>
-      <details>
-        <summary>Puis-je importer ma bibliothèque Goodreads ?</summary>
-        <p>Oui. Exportez votre bibliothèque Goodreads en fichier CSV, puis importez ce fichier dans Reliure.</p>
-      </details>
-      <details>
-        <summary>Puis-je partager mes lectures ?</summary>
-        <p>Oui. Partagez un livre, une citation, votre calendrier, un jalon ou votre année de lecture en image, carrée pour une publication ou verticale pour une story, avec Instagram, Messages ou toute autre app de votre iPhone.</p>
-      </details>
-      <details>
-        <summary>En quelles langues Reliure est-il offert ?</summary>
-        <p>En français et en anglais.</p>
-      </details>
-      <details>
-        <summary>Reliure est-il offert sur Android ?</summary>
-        <p>Non. Reliure est offert sur iPhone.</p>
-      </details>
-      <details>
-        <summary>Reliure fonctionne-t-il hors ligne ?</summary>
-        <p>Oui. Tout fonctionne sans connexion, sauf la recherche d’un livre en ligne par code-barres, titre ou auteur. Vous pouvez toujours ajouter un livre à la main.</p>
-      </details>
-      <details>
-        <summary>Puis-je suivre des livres numériques ou audio ?</summary>
-        <p>Reliure est pensé pour les livres imprimés, avec une progression suivie à la page.</p>
-      </details>
+    <section class="closing reveal">
+      <h2>Journal de lecture pour iPhone</h2>
+      <a class="pill" href="https://apps.apple.com/app/id6818318860">Disponible sur l’App Store <span aria-hidden="true">→</span></a>
+      <svg class="doodle" viewBox="0 0 120 70" style="left: calc(50% - 230px); top: 270px; width: 96px;" aria-hidden="true"><path pathLength="1" d="M4 52C40 74 80 58 98 18M78 24l22-8 4 26"/></svg>
+      <img class="qr" src="../assets/qr.svg" width="76" height="76" alt="">
+      <p class="qr-caption">Ouvrez Reliure dans l’App Store avec l’appareil photo de votre iPhone</p>
     </section>
 
-    <section class="closing">
-      <h2>Poursuivez l’histoire.</h2>
-      <a class="cta" href="https://apps.apple.com/app/id6818318860"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path class="cta-arrow" d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg><span>Télécharger dans l’App Store</span></a>
+    <hr class="rule">
+
+    <section class="answers reveal" aria-labelledby="faq-heading">
+      <svg class="doodle side" viewBox="0 0 200 200" style="left: calc(50% - 640px); top: 260px; width: 160px;" aria-hidden="true"><path pathLength="1" d="M160 10C110 30 70 80 50 150C80 120 130 80 160 10ZM160 10 60 140M50 150 44 170M20 186C50 176 70 192 100 182S150 178 180 186"/></svg>
+      <svg class="doodle side" viewBox="0 0 200 210" style="left: calc(50% + 460px); top: 900px; width: 130px;" aria-hidden="true"><path pathLength="1" d="M30 170 150 50 176 76 56 196ZM150 50 162 38C170 30 182 42 176 50L176 76M30 170 20 206 56 196M136 64 162 90"/></svg>
+      <h2 class="sr-only" id="faq-heading">Questions fréquentes</h2>
+      <div class="answer reveal"><p>Reliure</p><div><h3>Qu’est-ce que Reliure ?</h3><p>Reliure est une app iPhone pour suivre les livres que vous lisez : votre bibliothèque, votre page en cours, vos sessions de lecture, vos notes, vos évaluations, vos statistiques et votre calendrier de lecture.</p></div></div><div class="answer reveal"><p>Compte</p><div><h3>Faut-il créer un compte ?</h3><p>Non. Reliure fonctionne sans compte ni inscription, et votre bibliothèque est enregistrée sur votre iPhone.</p></div></div><div class="answer reveal"><p>Prix</p><div><h3>Reliure est-il gratuit ?</h3><p>Oui. Reliure est gratuit, sans publicité, sans abonnement et sans compte. Certains liens vers des librairies, comme Amazon, peuvent être des liens affiliés : nous pouvons toucher une petite commission, sans frais pour vous.</p></div></div><div class="answer reveal"><p>Ajouter un livre</p><div><h3>Comment ajouter un livre ?</h3><p>Scannez le code-barres ISBN avec l’appareil photo, cherchez par titre ou auteur, ou entrez l’ISBN à la main. Reliure récupère les informations du livre dans Google Books, Open Library et le catalogue de la Bibliothèque nationale de France.</p></div></div><div class="answer reveal"><p>Progression</p><div><h3>Comment suivre ma progression ?</h3><p>Entrez votre page en cours ou un pourcentage, ou ajustez avec + et −. Chaque mise à jour devient une session de lecture, qui alimente vos statistiques et vos séries de jours.</p></div></div><div class="answer reveal"><p>Sauvegardes</p><div><h3>Et si je change ou perds mon iPhone ?</h3><p>Votre bibliothèque fait partie des sauvegardes iCloud de votre iPhone. Vous pouvez aussi exporter en tout temps un fichier de sauvegarde Reliure, avec vos livres, sessions, citations, notes et couvertures, et le restaurer sur un autre iPhone. L’app vous rappelle discrètement de faire une sauvegarde, sans notification.</p></div></div><div class="answer reveal"><p>Exportation</p><div><h3>Puis-je emporter mes livres dans une autre app ?</h3><p>Oui. Reliure exporte votre bibliothèque dans un fichier CSV au format Goodreads, que Goodreads et StoryGraph peuvent importer.</p></div></div><div class="answer reveal"><p>Goodreads</p><div><h3>Puis-je importer ma bibliothèque Goodreads ?</h3><p>Oui. Exportez votre bibliothèque Goodreads en fichier CSV, puis importez ce fichier dans Reliure.</p></div></div><div class="answer reveal"><p>Partage</p><div><h3>Puis-je partager mes lectures ?</h3><p>Oui. Partagez un livre, une citation, votre calendrier, un jalon ou votre année de lecture en image, carrée pour une publication ou verticale pour une story, avec Instagram, Messages ou toute autre app de votre iPhone.</p></div></div><div class="answer reveal"><p>Langues</p><div><h3>En quelles langues Reliure est-il offert ?</h3><p>En français et en anglais.</p></div></div><div class="answer reveal"><p>Android</p><div><h3>Reliure est-il offert sur Android ?</h3><p>Non. Reliure est offert sur iPhone.</p></div></div><div class="answer reveal"><p>Hors ligne</p><div><h3>Reliure fonctionne-t-il hors ligne ?</h3><p>Oui. Tout fonctionne sans connexion, sauf la recherche d’un livre en ligne par code-barres, titre ou auteur. Vous pouvez toujours ajouter un livre à la main.</p></div></div><div class="answer reveal"><p>Formats</p><div><h3>Puis-je suivre des livres numériques ou audio ?</h3><p>Reliure est pensé pour les livres imprimés, avec une progression suivie à la page.</p></div></div>
+      <div class="answer"><p></p><div><p><a href="../fr/assistance/">D’autres questions ? Consultez l’assistance →</a></p></div></div>
     </section>
 
-    <aside class="shop" aria-labelledby="shop-heading">
-      <a class="shop-card" href="https://omnomnom.threadless.com/collections/bookish-club/" target="_blank" rel="noopener">
-        <div class="shop-text">
-          <p class="shop-eyebrow">Boutique</p>
-          <h2 id="shop-heading">Bookish Club</h2>
-          <p>Des t-shirts typographiques pour les lecteurs qui disent toujours « encore un chapitre ». Citations de classiques, clins d’œil et humour de lecteur.</p>
-          <span class="shop-link">Voir la collection<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
-        </div>
-        <div class="shop-thumbs">
-          <img src="../assets/shop/dragons.webp" width="500" height="500" loading="lazy" alt="T-shirt « I’d Rather Be Riding Dragons »">
-          <img src="../assets/shop/librarian.webp" width="500" height="500" loading="lazy" alt="T-shirt « Trust Me, I’m a Librarian »">
-          <img src="../assets/shop/shelf-control.webp" width="500" height="500" loading="lazy" alt="T-shirt « Shelf Control? Never »">
-        </div>
-      </a>
+    <!-- Two friendly ads: Porcom, the makers' movie and TV journal, and the Bookish Club tees on Threadless. -->
+    <aside class="ads">
+      <div class="ads-grid">
+        <a class="ad ad-porcom reveal" href="https://porcom.app/fr/">
+          <div class="ad-text">
+            <p class="ad-eyebrow">Des mêmes créateurs</p>
+            <h3><img src="../assets/ads/porcom-logo.png" width="40" height="40" alt="">Porcom</h3>
+            <p class="ad-tagline">Un petit journal pour tout ce que vous regardez.</p>
+            <p class="ad-body">Le journal de films et de séries pour iPhone : bandes-annonces, épisodes, verdicts et heures d’écran. Gratuit, sans compte.</p>
+            <span class="ad-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1ZM13.9 4.9c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.2 1.1.1 2.3-.6 3-1.5Z"/></svg>Bientôt sur iPhone</span>
+          </div>
+          <div class="ad-phone"><img src="../assets/ads/porcom-home-fr-dark.webp" width="750" height="1630" loading="lazy" alt="L’accueil de Porcom : The Bear, saison 5, épisode 6 sur 10, avec un bouton Continuer."></div>
+        </a>
+        <a class="ad ad-omnomnom reveal" href="https://omnomnom.threadless.com/collections/bookish-club/" target="_blank" rel="noopener">
+          <div class="ad-text">
+            <p class="ad-eyebrow">Boutique</p>
+            <h3>Bookish Club</h3>
+            <p class="ad-body">Des t-shirts typographiques pour celles et ceux qui disent toujours « encore un chapitre ». Citations classiques, clins d’œil et humour littéraire.</p>
+            <span class="ad-cta">Voir la collection <span aria-hidden="true">↗</span></span>
+          </div>
+          <div class="ad-tees"><img src="../assets/ads/omnomnom-dragons.webp" width="500" height="500" loading="lazy" alt="T-shirt « I’d Rather Be Riding Dragons »"><img src="../assets/ads/omnomnom-librarian.webp" width="500" height="500" loading="lazy" alt="T-shirt « Trust Me, I’m a Librarian »"><img src="../assets/ads/omnomnom-shelf-control.webp" width="500" height="500" loading="lazy" alt="T-shirt « Shelf Control? Never »"></div>
+        </a>
+      </div>
     </aside>
   </main>
 
   <footer>
-    <div class="footer-meta">
-      <p>© 2026 Reliure · <span class="nowrap">Fait avec <svg class="heart" viewBox="0 0 24 22" role="img" aria-label="amour"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg></span> par Wibeset au Canada</p>
-      <nav aria-label="Pied de page">
-        <a href="https://apps.apple.com/app/id6818318860">App Store <span aria-hidden="true">↗</span></a>
-        <a href="assistance/">Assistance</a>
-        <a href="confidentialite/">Confidentialité</a>
-        <a href="alternative-goodreads/">Alternative à Goodreads</a>
-        <a href="../" hreflang="en" lang="en">English</a>
-      </nav>
-    </div>
-    <p class="footer-mark" aria-hidden="true">Reliure</p>
+    <svg class="heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg>
+    <p>Fait par <a href="https://wibeset.ca">Wibeset</a> · Développé au Canada</p>
+    <nav aria-label="Pied de page">
+      <a href="https://apps.apple.com/app/id6818318860">App Store ↗</a>
+      <a href="../fr/assistance/">Assistance</a>
+      <a href="../fr/confidentialite/">Confidentialité</a>
+      <a href="../fr/alternative-goodreads/">Alternative à Goodreads</a>
+      <a href="../" hreflang="en" lang="en">English</a>
+    </nav>
+    <div class="wordmark-clip"><p class="wordmark" aria-hidden="true">Reliure</p></div>
   </footer>
-  <script src="../assets/tour.js" defer></script>
+  <script src="../assets/main.js" defer></script>
 </body>
 </html>

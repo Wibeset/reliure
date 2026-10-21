@@ -9,9 +9,8 @@
   <link rel="alternate" hreflang="en" href="https://reliure.me/support/">
   <link rel="alternate" hreflang="fr" href="https://reliure.me/fr/assistance/">
   <link rel="alternate" hreflang="x-default" href="https://reliure.me/support/">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f1012" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0b">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
@@ -19,8 +18,7 @@
   <link rel="manifest" href="../site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap">
   <link rel="stylesheet" href="../assets/style.min.css">
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "FAQPage", "inLanguage": "en", "url": "https://reliure.me/support/", "mainEntity": [{"@type": "Question", "name": "Where are my books stored?", "acceptedAnswer": {"@type": "Answer", "text": "Only on your iPhone. Reliure works without an account or a server, so we can’t see your library. If you back up your iPhone with iCloud or to a computer, your Reliure data is part of that backup."}}, {"@type": "Question", "name": "How do I back up my library or move to a new iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "In Reliure, tap Profile › Data › Export a backup and save the .reliure file to Files or iCloud Drive. On the new iPhone, open that file, or tap Profile › Data › Restore a backup. Choose Merge with my library to add what’s missing, or Replace my library to start over from the backup. The backup includes your books, wishlist, reading sessions, notes, ratings and covers."}}, {"@type": "Question", "name": "Barcode scanning doesn’t work", "acceptedAnswer": {"@type": "Answer", "text": "Reliure needs the camera to read barcodes. Open Settings › Reliure and turn on Camera. Then hold the barcode on the back of the book flat inside the frame, in good light. You can also type the ISBN."}}, {"@type": "Question", "name": "I can’t find my book", "acceptedAnswer": {"@type": "Answer", "text": "Try Advanced search with the title and author, or enter the ISBN. Some books, especially from small publishers, are missing from online catalogues: tap Enter manually to add it yourself."}}, {"@type": "Question", "name": "How do I change a book’s reading dates?", "acceptedAnswer": {"@type": "Answer", "text": "On the book’s page, tap More › Edit, then adjust Started on and Finished on under Reading dates. When you add a book you’ve already read, you can set these dates right away."}}, {"@type": "Question", "name": "How do I export my books to Goodreads or StoryGraph?", "acceptedAnswer": {"@type": "Answer", "text": "Tap Profile › Data › Export as CSV. The file follows Goodreads’ export format, which both Goodreads and StoryGraph can import."}}, {"@type": "Question", "name": "How do I delete my data?", "acceptedAnswer": {"@type": "Answer", "text": "Delete a book from its page (More › Delete), or delete the app to erase all its data from your iPhone. Export a backup first if you want to keep it."}}, {"@type": "Question", "name": "Is Reliure free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — no ads and no account. Some bookstore links, such as Amazon, may be affiliate links: we may earn a small commission, at no extra cost to you."}}]}]}</script>
   <meta property="og:type" content="website">
@@ -39,10 +37,11 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="nav">
-    <a class="brand" href="../"><picture><source srcset="../assets/icon-dark.png" media="(prefers-color-scheme: dark)"><img src="../assets/icon.png" width="48" height="48" alt=""></picture>Reliure</a>
-    <nav aria-label="Main">
-      <a href="../fr/assistance/" hreflang="fr" lang="fr">Français</a>
-    </nav>
+    <a class="brand" href="../"><img src="../assets/icon-dark.png" width="30" height="30" alt="">Reliure <span>for iPhone</span></a>
+    <a class="hide-small" href="../support/">Support</a>
+    <a class="hide-small" href="../goodreads-alternative/">Goodreads alternative</a>
+    <a href="../fr/assistance/" hreflang="fr" lang="fr">Français</a>
+    <a class="store" href="https://apps.apple.com/app/id6818318860">Available on the App Store <span aria-hidden="true">→</span></a>
   </header>
 
   <main id="main">
@@ -56,7 +55,7 @@
       <p>If something isn’t working, include your iPhone model and iOS version (Settings › General › About), and a screenshot if you can.</p>
 
       <h2>Frequently asked questions</h2>
-      <div class="faq">
+      <div class="faq-list">
         <details>
           <summary>Where are my books stored?</summary>
           <p>Only on your iPhone. Reliure works without an account or a server, so we can’t see your library. If you back up your iPhone with iCloud or to a computer, your Reliure data is part of that backup.</p>
@@ -101,16 +100,16 @@
   </main>
 
   <footer>
-    <div class="footer-meta">
-      <p>© 2026 Reliure · <span class="nowrap">Made with <svg class="heart" viewBox="0 0 24 22" role="img" aria-label="love"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg></span> by Wibeset in Canada</p>
-      <nav aria-label="Footer">
-        <a href="./" aria-current="page">Support</a>
-        <a href="../privacy/">Privacy</a>
-        <a href="../goodreads-alternative/">Goodreads alternative</a>
-        <a href="../fr/assistance/" hreflang="fr" lang="fr">Français</a>
-      </nav>
-    </div>
-    <p class="footer-mark" aria-hidden="true">Reliure</p>
+    <svg class="heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg>
+    <p>Made by <a href="https://wibeset.ca">Wibeset</a> · Developed in Canada</p>
+    <nav aria-label="Footer">
+      <a href="https://apps.apple.com/app/id6818318860">App Store ↗</a>
+      <a href="../support/" aria-current="page">Support</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../goodreads-alternative/">Goodreads alternative</a>
+      <a href="../fr/assistance/" hreflang="fr" lang="fr">Français</a>
+    </nav>
+    <div class="wordmark-clip"><p class="wordmark" aria-hidden="true">Reliure</p></div>
   </footer>
-</body>
+  <script src="../assets/main.js" defer></script></body>
 </html>

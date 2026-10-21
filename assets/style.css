@@ -1,62 +1,40 @@
-/* Source stylesheet: the pages load style.min.css. Run scripts/build-css.sh after editing. */
+/* Reliure's site, laid out like Porcom's (../porcom), after Rollie (via One Page Love), in dark only: a centered title,
+   a soft ink-blue pill, a row of phones running off both edges, hand-drawn bookish doodles, ten small colored features,
+   and the questions set as labeled paragraphs. The accent is Reliure's navy, lifted to read on black.
+   Source stylesheet: run scripts/build-css.sh after editing. */
 
-/* Colors mirror the app's asset catalog. */
 :root {
-  color-scheme: light dark;
-  --background: #f5f3ee;
-  --surface: #fffefd;
-  --surface-secondary: #eeece7;
-  --text: #17212b;
-  --text-secondary: #5f646c;
-  --progress: #17212b;
-  --bezel: #0b0c0e;
-  /* Fine paper grain, tinted with the ink color. */
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.13 0 0 0 0 0.17 0.16 0 0 0 -0.04'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23g)'/%3E%3C/svg%3E");
-  --serif: "Instrument Serif", "Instrument Serif Fallback", Georgia, serif;
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f1012;
-    --surface: #1b1c1f;
-    --surface-secondary: #2a2b2f;
-    --text: #f2f1ee;
-    --text-secondary: #9a9da3;
-    /* Same navy, lifted: #17212b itself would vanish on the dark background (3.4:1 here). */
-    --progress: #4a6a8c;
-    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.95 0 0 0 0 0.95 0 0 0 0 0.93 0.16 0 0 0 -0.04'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23g)'/%3E%3C/svg%3E");
-  }
-}
-
-/* Georgia scaled to Instrument Serif's width and vertical metrics (measured: 75.3% width, 0.99 / 0.31 em). */
-@font-face {
-  font-family: "Instrument Serif Fallback";
-  src: local("Georgia");
-  size-adjust: 75.3%;
-  ascent-override: 131.5%;
-  descent-override: 41.2%;
-  line-gap-override: 0%;
+  color-scheme: dark;
+  --bg: #0a0a0b;
+  --line: #232326;
+  --text: #f2f2f3;
+  --muted: #8e8e93;
+  --faint: #5c5c61;
+  /* Reliure's navy (#17212b, #4a6a8c in dark), lifted again so text in it reads on black. */
+  --accent: #8fb3db;
+  --accent-soft: rgb(74 106 140 / 0.3);
+  /* A light film grain over the page. */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.08 0 0 0 -0.03'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
 
 body {
   margin: 0;
-  background: var(--grain) var(--background);
+  background: var(--grain) var(--bg);
   color: var(--text);
   font-family: var(--sans);
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 a { color: inherit; }
-
 h1, h2, h3, p { margin: 0; }
-
-/* Accessibility helpers */
 
 .sr-only {
   position: absolute;
@@ -74,770 +52,430 @@ h1, h2, h3, p { margin: 0; }
   left: 12px;
   z-index: 100;
   padding: 10px 16px;
-  border-radius: 10px;
+  border-radius: 999px;
   background: var(--text);
-  color: var(--background);
-  font-weight: 600;
+  color: var(--bg);
+  font-weight: 500;
   text-decoration: none;
   transform: translateY(-200%);
 }
 
 .skip:focus { transform: none; }
 
-:focus-visible {
-  outline: 2px solid var(--text);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 
-.cta:focus-visible { border-radius: 14px; outline-offset: 4px; }
-
-section { padding: 0 20px; }
-
-/* Navigation: logo and name on the left; language, App Store and QR at the far right. */
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 40px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--serif);
-  font-size: 36px;
-  text-decoration: none;
-}
-
-.brand picture { display: flex; }
-.brand img { width: 48px; height: 48px; }
-
-.nav nav { display: flex; align-items: center; gap: 16px; font-size: 16px; }
-
-.nav nav a:not(.qr) { padding: 8px 4px; }
-
-.nav nav a { color: var(--text-secondary); text-decoration: none; }
-.nav nav a:hover { color: var(--text); }
-
-/* QR code of the App Store link, for desktop visitors to scan with their iPhone. Its white quiet zone is part of the image. */
-.qr { display: flex; }
-.qr img { width: 56px; height: 56px; border-radius: 6px; }
-
-/* Hero */
-
-.hero {
-  padding-top: 96px;
-  /* Books start their fall off to the sides: never let them widen the page. */
-  overflow-x: clip;
-  text-align: center;
-}
-
-h1 {
-  max-width: 11em;
-  margin: 0 auto;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(48px, 9vw, 112px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-}
-
-h1 em { color: var(--text-secondary); }
-
-/* Hand-drawn navy underline under the key words, drawn in on load. */
-.mark { position: relative; z-index: 0; white-space: nowrap; }
-
-.swoosh {
+/* Hand-drawn doodles, scattered in the margins. They sit behind the content and never catch the pointer. */
+.doodle {
   position: absolute;
-  left: -2%;
-  bottom: 0.02em;
-  z-index: -1;
-  width: 104%;
-  height: 0.16em;
-  overflow: visible;
+  z-index: 0;
   fill: none;
-  stroke: var(--progress);
-  stroke-width: 18;
-  opacity: 0.5;
-  stroke-linecap: butt;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: draw 0.25s ease-out 0.1s forwards;
-}
-
-@keyframes draw { to { stroke-dashoffset: 0; } }
-
-@media (prefers-reduced-motion: reduce) {
-  .swoosh { animation: none; stroke-dashoffset: 0; }
-}
-
-/* Shelf of book spines under the hero: on load, each book drops from the sky at its own spot across
-   the screen (--x), in a shuffled order (--d), tumbling slightly (--r), and bounces as it lands. */
-.shelf {
-  --s: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2px;
-  width: fit-content;
-  margin: 72px auto 0;
-  padding: 0 28px;
-  border-bottom: 2px solid color-mix(in srgb, var(--text) 18%, transparent);
-}
-
-.spine {
-  position: relative;
-  flex: none;
-  width: calc(var(--w) * var(--s) * 1px);
-  height: calc(var(--h) * var(--s) * 1px);
-  border-radius: 3px 3px 1px 1px;
-  /* Two bands near the top and bottom, light then dark so they show on any cover color. */
-  background:
-    linear-gradient(to bottom,
-      transparent 9%, rgb(255 255 255 / 0.22) 9% 10.5%, rgb(0 0 0 / 0.16) 10.5% 12%,
-      transparent 12% 86%, rgb(255 255 255 / 0.22) 86% 87.5%, rgb(0 0 0 / 0.16) 87.5% 89%, transparent 89%),
-    var(--c);
-  box-shadow: inset 2px 0 rgb(255 255 255 / 0.14), inset -3px 0 rgb(0 0 0 / 0.14);
-  animation: drop 0.95s var(--d) both;
-}
-
-/* The last book leans back against the row. */
-.spine-lean {
-  margin-left: calc(30px * var(--s));
-  transform: rotate(-12deg);
-  transform-origin: bottom left;
-}
-
-/* The logo's bookmark, hanging out of one book. */
-.spine-ribbon::after {
-  content: "";
-  position: absolute;
-  top: calc(100% - 6px);
-  left: 58%;
-  width: calc(7px * var(--s));
-  height: calc(26px * var(--s));
-  background: #c8d6e5;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
-}
-
-/* Falls under gravity (ease-in), lands, then two small rebounds. */
-@keyframes drop {
-  0% { translate: var(--x) -100vh; rotate: var(--r); animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); }
-  62% { translate: 0 0; rotate: 0deg; animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1); }
-  78% { translate: 0 -14px; animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); }
-  90% { translate: 0 0; animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1); }
-  95% { translate: 0 -4px; animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); }
-  100% { translate: 0 0; rotate: 0deg; }
-}
-
-@media (prefers-color-scheme: dark) {
-  .spine { filter: brightness(0.85) saturate(0.9); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .spine { animation: none; }
-}
-
-.sub {
-  margin-top: 28px;
-  font-size: clamp(17px, 2vw, 20px);
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 36px;
-  padding: 18px 34px;
-  border-radius: 14px;
-  /* Navy button from the logo, cream text in both themes (5:1 or better). */
-  background: var(--progress);
-  color: #f5f3ee;
-  font-size: 18px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 8px 24px color-mix(in srgb, var(--progress) 35%, transparent);
-  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
-}
-
-.cta:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.06);
-  box-shadow: 0 12px 32px color-mix(in srgb, var(--progress) 45%, transparent);
-}
-
-.cta-icon { color: var(--progress); }
-
-/* Mini reading-progress bar in the pre-launch badge: fills once on load, almost to the end. */
-.cta-progress {
-  width: 40px;
-  height: 5px;
-  margin-left: 4px;
-  overflow: hidden;
-  border-radius: 3px;
-  background: color-mix(in srgb, var(--progress) 18%, transparent);
-}
-
-.cta-progress span {
-  display: block;
-  width: 85%;
-  height: 100%;
-  border-radius: inherit;
-  background: var(--progress);
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: fill 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.5s forwards;
-}
-
-@keyframes fill { to { transform: scaleX(1); } }
-
-@media (prefers-reduced-motion: reduce) {
-  .cta-progress span { animation: none; transform: none; }
-}
-
-.cta-icon {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.2;
+  stroke: var(--text);
+  stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.cta:hover .cta-arrow { animation: nudge 0.6s ease-in-out infinite; }
-
-@keyframes nudge {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(2.5px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cta:hover .cta-arrow { animation: none; }
-}
-
-/* Tour: the phone stays pinned while its screens change on scroll.
-   Each callout sits in the left half and draws a line to a spot on the phone. */
-
-.tour {
-  /* Phone size: as large as possible while fitting the viewport. */
-  --ph: min(1300px, calc(100svh - 96px));
-  /* iPhone 17 Pro proportions, so its screenshots fill the screen exactly. */
-  --pw: calc(var(--ph) / 2.087);
-  /* Distance from the phone's left edge back to where the callout text starts. */
-  --reach: calc(50vw - var(--pw) / 2 - 5vw);
-  position: relative;
-  height: calc(var(--steps) * 100svh);
-  margin-top: 40px;
-}
-
-.stage {
-  position: sticky;
-  top: 0;
-  height: 100svh;
-  display: grid;
-  place-items: center;
-}
-
-.device {
-  position: relative;
-  width: var(--pw);
-  height: var(--ph);
-  border-radius: calc(var(--pw) * 0.16);
-  background: var(--bezel);
-  outline: 1px solid var(--surface-secondary);
-  box-shadow: 0 40px 100px rgb(0 0 0 / 0.16);
-}
-
-.screen {
-  position: absolute;
-  inset: calc(var(--pw) * 0.037);
-  overflow: hidden;
-  border-radius: calc(var(--pw) * 0.125);
-  background: var(--surface-secondary);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.screen.is-active { opacity: 1; }
-
-/* The captures already show the status bar and Dynamic Island. */
-.screen img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-.callout {
-  position: absolute;
-  top: calc(var(--y) * 1%);
-  left: calc(-1 * var(--reach));
-  width: calc(var(--reach) + var(--x) * var(--pw) / 100);
-  display: flex;
-  align-items: center;
-  transform: translateY(-50%);
+  opacity: 0.8;
+  overflow: visible;
   pointer-events: none;
 }
 
-.callout-text {
-  flex: none;
-  width: min(320px, calc(var(--reach) - 40px));
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.callout-text h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(28px, 3vw, 40px);
-  line-height: 1.05;
-}
-
-.callout-text p { margin-top: 8px; font-size: 16px; color: var(--text-secondary); }
-
-.callout-line {
-  flex: 1;
-  height: 1px;
-  margin-left: 24px;
-  background: var(--text);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.6s ease 0.1s;
-}
-
-.callout-dot {
-  position: absolute;
-  right: 0;
-  width: 12px;
-  height: 12px;
-  margin-right: -6px;
-  border-radius: 50%;
-  background: var(--progress);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--progress) 30%, transparent);
-  opacity: 0;
-  transform: scale(0.4);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* Every other callout mirrors to the right half. */
-.callout-right {
-  left: calc(var(--x) * var(--pw) / 100);
-  width: calc(var(--reach) + (100 - var(--x)) * var(--pw) / 100);
-  flex-direction: row-reverse;
-}
-
-.callout-right .callout-line { margin: 0 24px 0 0; transform-origin: left; }
-.callout-right .callout-dot { right: auto; left: 0; margin: 0 0 0 -6px; }
-
-.callout.is-active .callout-text { opacity: 1; transform: none; }
-.callout.is-active .callout-line { transform: none; }
-.callout.is-active .callout-dot { opacity: 1; transform: none; }
+/* They draw themselves in once their section comes into view. */
+.js .doodle path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s cubic-bezier(0.5, 0, 0.3, 1) 0.2s; }
+.js .is-in .doodle path { stroke-dashoffset: 0; }
 
 @media (prefers-reduced-motion: reduce) {
-  .screen, .callout-text, .callout-line, .callout-dot { transition: none; }
+  .js .doodle path { transition: none; stroke-dashoffset: 0; }
 }
 
-/* Mission */
+/* Navigation: the name on the left, the language and the store on the right. */
 
-.mission { padding-top: 160px; }
-
-.mission p {
-  max-width: 20em;
-  margin: 0 auto;
-  font-family: var(--serif);
-  font-size: clamp(30px, 4.4vw, 52px);
-  line-height: 1.12;
-  text-align: center;
-}
-
-/* Features: six short blocks, three by two, each under a hairline. */
-
-.features {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding-top: 160px;
-}
-
-.features ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 72px 48px;
-}
-
-.features li {
-  padding-top: 28px;
-  border-top: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
-}
-
-.feature-icon {
-  display: block;
-  width: 36px;
-  height: 36px;
-  margin-bottom: 22px;
-  fill: none;
-  stroke: var(--progress);
-  stroke-width: 1.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.features h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(24px, 2.4vw, 28px);
-  line-height: 1.08;
-}
-
-.features li p {
-  margin: 10px 0 0;
-  font-size: 16.5px;
-  color: var(--text-secondary);
-}
-
-/* FAQ */
-
-.faq {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-top: 160px;
-}
-
-.faq h2 {
-  margin-bottom: 32px;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1.05;
-  text-align: center;
-}
-
-.faq details { border-top: 1px solid var(--surface-secondary); }
-.faq details:last-of-type { border-bottom: 1px solid var(--surface-secondary); }
-
-.faq summary {
+.nav {
+  position: relative;
+  z-index: 2;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  padding: 20px 0;
-  font-family: var(--serif);
-  font-size: clamp(22px, 2.6vw, 28px);
-  line-height: 1.2;
-  cursor: pointer;
-  list-style: none;
-}
-
-.faq summary::-webkit-details-marker { display: none; }
-
-.faq summary::after {
-  content: "+";
-  flex: none;
-  font-family: var(--sans);
-  font-size: 24px;
-  font-weight: 300;
-  color: var(--text-secondary);
-  transition: transform 0.2s ease;
-}
-
-.faq details[open] summary::after { transform: rotate(45deg); }
-
-.faq details p {
-  padding-bottom: 24px;
-  max-width: 40em;
-  font-size: 17px;
-  color: var(--text-secondary);
-}
-
-/* Closing */
-
-.closing {
-  padding-top: 176px;
-  text-align: center;
-}
-
-.closing h2 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(44px, 7vw, 88px);
-  line-height: 1;
-}
-
-/* Shop: a card linking to the Bookish Club tee collection on Threadless. */
-
-.shop {
-  max-width: 1080px;
+  gap: 28px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 200px 20px 0;
+  padding: 36px 24px;
 }
 
-/* The card sits close to the footer, well clear of the closing call to action. */
-main:has(.shop) + footer { margin-top: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; margin-right: auto; font-weight: 500; text-decoration: none; }
+.brand img { width: 30px; height: 30px; }
+.brand span { color: var(--muted); font-weight: 400; }
 
-.shop-card {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
-  align-items: center;
-  gap: 48px;
-  padding: 48px 56px;
-  border-radius: 28px;
-  background: var(--surface);
-  color: inherit;
-  text-decoration: none;
-}
+.nav a:not(.brand) { color: var(--muted); text-decoration: none; }
+.nav a:not(.brand):hover { color: var(--text); }
+.nav a.store { color: var(--accent); }
+.nav a.store:hover { color: var(--text); }
 
-.shop-eyebrow {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
-.shop h2 {
-  margin: 10px 0 0;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(40px, 5vw, 60px);
-  line-height: 1;
-}
-
-.shop-text p:not(.shop-eyebrow) {
-  max-width: 26em;
-  margin: 14px 0 0;
-  font-size: 17px;
-  color: var(--text-secondary);
-}
-
-.shop-link {
+/* The soft red pill carries the call to action. */
+.pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 24px;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.shop-link svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.shop-thumbs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-/* Product previews from the Threadless shop. */
-.shop-thumbs img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
-  background: var(--surface-secondary);
-}
-
-/* Legal pages (privacy policy, support) */
-
-.legal {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 96px 20px 0;
-}
-
-.legal h1 { max-width: none; font-size: clamp(44px, 7vw, 88px); }
-
-.legal .updated {
-  margin-top: 16px;
-  font-size: 15px;
-  color: var(--text-secondary);
-}
-
-.legal .lede {
-  margin-top: 40px;
-  font-family: var(--serif);
-  font-size: clamp(24px, 3vw, 32px);
-  line-height: 1.25;
-  text-wrap: pretty;
-}
-
-.legal h2 {
-  margin-top: 56px;
-  padding-top: 24px;
-  border-top: 1px solid var(--surface-secondary);
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(26px, 3vw, 32px);
-  line-height: 1.15;
-}
-
-.legal p, .legal li {
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
   font-size: 17px;
-  line-height: 1.6;
-  color: var(--text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.legal p { margin-top: 16px; }
-.legal ul { margin: 16px 0 0; padding-left: 1.2em; }
+/* Hero */
+
+.hero { position: relative; padding: 64px 24px 0; text-align: center; }
+
+.hero h1, .closing h2 {
+  position: relative;
+  z-index: 1;
+  max-width: 15em;
+  margin: 0 auto;
+  font-size: clamp(38px, 4.8vw, 58px);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
+/* The page's title, in semibold; the closing descriptor keeps the light weight. */
+.hero h1 { max-width: 10em; font-size: clamp(42px, 6vw, 72px); font-weight: 600; letter-spacing: -0.025em; }
+
+/* The emphasized words, swept with a translucent marker stroke behind the letters (an SVG mask, so it follows --accent). */
+.swash { position: relative; font-style: normal; white-space: nowrap; }
+.swash::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -0.06em;
+  right: -0.02em;
+  bottom: 0.04em;
+  height: 0.72em;
+  background: var(--accent);
+  opacity: 0.25;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M4 9L198 4 195 31 2 36Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath d='M4 9L198 4 195 31 2 36Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+/* The App Store pill and, beside it, Android's quiet "coming soon" (not a link). */
+.ctas { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 40px; }
+.pill.soon { background: none; box-shadow: inset 0 0 0 1px var(--line); color: var(--muted); cursor: default; }
+
+.free { position: relative; z-index: 1; margin-top: 18px; font-size: 15px; color: var(--muted); }
+
+/* The row of phones, centered and running off both edges of the screen. */
+
+/* Clipped to the screen, so the phones past the edges don't make the page scroll sideways. */
+.phones {
+  display: flex;
+  justify-content: center;
+  overflow-x: clip;
+  padding: 30px 0 40px;
+  gap: clamp(28px, 4.5vw, 64px);
+  margin-top: 80px;
+}
+
+.device {
+  flex: none;
+  width: clamp(200px, 19vw, 262px);
+  padding: 9px;
+  border-radius: 44px;
+  background: linear-gradient(145deg, #3a3a3e, #121214 40%, #2a2a2d);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12), 0 40px 70px -30px rgb(0 0 0 / 0.9);
+}
+
+.device img { display: block; width: 100%; height: auto; border-radius: 36px; }
+
+/* On hover, a phone grows toward the viewer and lifts above its neighbors. The scale sits on its own property,
+   so it adds to the entrance animation's translate instead of fighting it. */
+.device { position: relative; transition: scale 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease; }
+
+@media (hover: hover) {
+  .device:hover {
+    z-index: 1;
+    scale: 1.12;
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.16), 0 50px 90px -30px rgb(0 0 0 / 0.95);
+  }
+}
+
+/* Each phone rises a little after the one before it. */
+.js .device {
+  opacity: 0;
+  translate: 0 30px;
+  transition: opacity 0.8s ease var(--d), translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d),
+    scale 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+}
+.js .phones.is-in .device { opacity: 1; translate: 0 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .device { opacity: 1; translate: none; transition: none; }
+  .device, .js .device { transition: none; }
+}
+
+/* Features: five by two, a small colored icon, a name and a short line. */
+
+.features-wrap { position: relative; margin-top: 110px; }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 56px 20px;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0 24px;
+  list-style: none;
+  text-align: center;
+}
+
+.features li { position: relative; z-index: 1; }
+.features .icon { display: block; width: 30px; height: 30px; margin: 0 auto 14px; }
+.features h3 { font-size: 17px; font-weight: 500; }
+.features p { margin-top: 4px; font-size: 15.5px; line-height: 1.55; color: var(--muted); }
+
+/* Call to action: the descriptor, the pill, a doodled arrow and the QR code. */
+
+.closing { position: relative; padding-top: 150px; text-align: center; }
+.closing .pill { position: relative; z-index: 1; margin-top: 32px; }
+.qr { position: relative; z-index: 1; display: block; width: 76px; height: 76px; margin: 72px auto 0; }
+.qr-caption { margin-top: 18px; font-size: 14px; color: var(--muted); }
+
+.rule { max-width: 712px; height: 1px; margin: 120px auto 0; border: 0; background: var(--line); }
+
+/* Questions, set as labeled paragraphs: a short label on the left, the question and its answer on the right. */
+
+.answers { position: relative; max-width: 760px; margin: 110px auto 0; padding: 0 24px; }
+
+.answer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 24px;
+}
+
+.answer + .answer { margin-top: 72px; }
+
+.answer > p:first-child { padding-top: 4px; font-size: 16px; font-weight: 500; }
+.answer h3 { font-size: clamp(22px, 2.4vw, 26px); font-weight: 400; letter-spacing: -0.01em; line-height: 1.3; }
+.answer h3 + p { margin-top: 18px; color: var(--muted); }
+.answer a { color: var(--accent); text-decoration: none; }
+.answer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Ads, kept: Reliure and the Omnomnom tee shop, each in its own colors. */
+
+.ads { max-width: 1000px; margin: 150px auto 0; padding: 0 24px; }
+.ads-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.ad {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 440px;
+  overflow: hidden;
+  border-radius: 28px;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.ad:hover { transform: translateY(-3px); }
+
+.ad-text { position: relative; z-index: 1; padding: 36px 36px 0; }
+.ad-eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; }
+.ad h3 { display: flex; align-items: center; gap: 12px; margin-top: 12px; font-size: 32px; font-weight: 500; letter-spacing: -0.02em; }
+.ad h3 picture { display: flex; }
+.ad h3 img { width: 40px; height: 40px; border-radius: 9px; }
+.ad-body { max-width: 24em; margin-top: 10px; font-size: 15.5px; line-height: 1.55; opacity: 0.75; }
+.ad-tagline { margin-top: 8px; font-family: "Instrument Serif", Georgia, serif; font-size: 24px; line-height: 1.15; }
+
+.ad-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ad-cta svg { width: 15px; height: 15px; margin-top: -2px; fill: currentColor; }
+
+/* Porcom: its black and screen red, its home screen peeking from the bottom. */
+.ad-porcom { grid-template-columns: 1.15fr 0.85fr; grid-template-rows: none; background: #1c1312; color: #f4efe8; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
+.ad-porcom .ad-text { padding-bottom: 36px; }
+.ad-porcom .ad-tagline { font-family: var(--sans); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+.ad-porcom .ad-cta { background: #ff5a52; color: #fff; }
+
+.ad-phone {
+  align-self: end;
+  margin: 36px 26px -40% 0;
+  padding: 2.5%;
+  border-radius: 13% / 6%;
+  background: #0b0c0e;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+  transition: translate 0.35s ease;
+}
+
+.ad-phone img { display: block; width: 100%; height: auto; border-radius: 11% / 5.1%; }
+.ad-porcom:hover .ad-phone { translate: 0 -8px; }
+
+.ad-omnomnom { background: #2e2614; color: #ffe8a3; }
+.ad-omnomnom .ad-cta { background: #ffe8a3; color: #2b2112; }
+
+.ad-tees { align-self: end; display: flex; justify-content: center; padding: 28px 24px 34px; }
+
+.ad-tees img {
+  width: 34%;
+  height: auto;
+  margin: 0 -2%;
+  border-radius: 16px;
+  box-shadow: 0 18px 30px -14px rgb(0 0 0 / 0.6);
+  transition: rotate 0.3s ease;
+}
+
+.ad-tees img:nth-child(1) { rotate: -7deg; translate: 0 10px; }
+.ad-tees img:nth-child(2) { position: relative; z-index: 1; }
+.ad-tees img:nth-child(3) { rotate: 7deg; translate: 0 10px; }
+.ad-omnomnom:hover .ad-tees img:nth-child(1) { rotate: -11deg; }
+.ad-omnomnom:hover .ad-tees img:nth-child(3) { rotate: 11deg; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ad, .ad-phone, .ad-tees img { transition: none; }
+}
+
+/* Footer: on the page's own background, with no rule above it; the credit, the links, and the name across the bottom. */
+
+footer {
+  margin-top: 150px;
+  padding: 72px 24px 0;
+  text-align: center;
+}
+
+footer p { font-size: 16px; color: var(--muted); }
+footer p a { color: var(--text); text-decoration: none; }
+footer p a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.heart { display: block; width: 20px; height: 18px; margin: 0 auto 12px; fill: #e5383b; }
+
+footer nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 22px; margin-top: 14px; font-size: 15px; }
+footer nav a { color: var(--faint); text-decoration: none; }
+footer nav a:hover, footer nav a[aria-current] { color: var(--text); }
+
+/* The name, edge to edge across the whole window and flush on its bottom. The clip spans the window and is
+   the size container, so the letters follow its width (not 100vw, which counts the scrollbar). */
+.wordmark-clip { overflow: hidden; margin: 0 -24px; container-type: inline-size; }
+
+/* Measured on Inter 800 with -0.04em tracking: the ink of RELIURE starts 0.057em in and is 3.777em wide, so
+   26.48cqi makes it exactly as wide as the window, pulled back by its left bearing. With line-height 1 the
+   baseline sits 0.135em above the line's bottom and nothing dips below it: -0.125em sets the letters on the edge. */
+.wordmark {
+  margin: 48px 0 -0.125em -0.057em;
+  font-size: 26.48cqi;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #19191b;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Reveal on scroll (main.js adds .is-in; without JavaScript everything is visible). */
+.js .reveal { opacity: 0; translate: 0 20px; transition: opacity 0.7s ease, translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.js .reveal.is-in { opacity: 1; translate: 0 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; translate: none; transition: none; }
+}
+
+/* Support and privacy pages: one reading column, in the home page's voice. */
+
+.legal { max-width: 760px; margin: 0 auto; padding: 72px 24px 0; }
+.legal h1 { font-size: clamp(38px, 4.8vw, 56px); font-weight: 300; letter-spacing: -0.01em; line-height: 1.15; }
+.legal .updated { margin-top: 14px; font-size: 15px; color: var(--faint); }
+.legal h2 { margin-top: 56px; font-size: 22px; font-weight: 500; letter-spacing: -0.01em; }
+.legal p, .legal li { color: var(--muted); }
+.legal p { margin-top: 14px; }
+.legal p.lede { margin-top: 32px; font-size: clamp(20px, 2.2vw, 24px); font-weight: 300; line-height: 1.45; color: var(--text); }
+.legal ul, .legal ol { margin: 14px 0 0; padding-left: 1.2em; color: var(--muted); }
 .legal li + li { margin-top: 8px; }
-.legal strong { font-weight: 600; color: var(--text); }
-.legal a { text-underline-offset: 3px; }
+.legal strong { font-weight: 500; color: var(--text); }
+.legal a:not(.brand) { color: var(--accent); text-decoration: none; }
+.legal a:not(.brand):hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Comparison table (Goodreads alternative page): scrolls sideways on narrow screens. */
 .table-scroll { margin-top: 24px; overflow-x: auto; }
 .compare { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 16px; }
-.compare th, .compare td {
-  padding: 12px 12px 12px 0;
-  border-bottom: 1px solid var(--surface-secondary);
-  text-align: left;
-  vertical-align: top;
-}
-.compare thead th { font-weight: 600; color: var(--text); }
-.compare tbody th { font-weight: 400; color: var(--text-secondary); }
-.compare td { color: var(--text-secondary); }
-.compare td:first-of-type { color: var(--text); font-weight: 600; }
-.legal .note { font-size: 14px; }
+.compare th, .compare td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.compare thead th { font-weight: 500; color: var(--text); }
+.compare tbody th { font-weight: 400; color: var(--muted); }
+.compare td { color: var(--muted); }
+.compare td:first-of-type { color: var(--text); font-weight: 500; }
+.legal .note { font-size: 14px; color: var(--faint); }
 
-/* The home page FAQ, reused inside a legal page (support). */
-.legal .faq { max-width: none; margin: 0; padding-top: 8px; }
-.legal .faq details p { margin-top: 0; }
-.faq details ol {
-  margin: 0;
-  padding: 0 0 16px 1.2em;
-  max-width: 40em;
-  font-size: 17px;
-  color: var(--text-secondary);
-}
-.faq details li + li { margin-top: 8px; }
+.faq-list { margin-top: 8px; }
+.faq-list details { border-bottom: 1px solid var(--line); }
 
-/* Footer */
-
-footer {
-  margin-top: 160px;
-  overflow: hidden;
-  text-align: center;
-}
-
-/* Same width as the main content (see .features). */
-.footer-meta {
+.faq-list summary {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 20px;
-  font-size: 14px;
-  color: var(--text-secondary);
-  text-align: left;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  font-size: 18px;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
 }
 
-.footer-meta p { text-wrap: balance; }
-.nowrap { white-space: nowrap; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; flex: none; color: var(--accent); font-size: 22px; font-weight: 300; transition: rotate 0.2s ease; }
+.faq-list details[open] summary::after { rotate: 45deg; }
+.faq-list details p { margin-top: 0; padding-bottom: 20px; }
+.faq-list details ol { margin: 0 0 16px; }
 
-.footer-meta nav { display: flex; gap: 16px; }
-.footer-meta nav a { padding: 6px 4px; }
-.footer-meta nav a { text-decoration: none; }
-.footer-meta nav a:hover { color: var(--text); }
+.not-found { padding-top: 96px; padding-bottom: 120px; }
+.not-found .brand { display: inline-flex; }
+.not-found h1 { margin-top: 48px; }
+.not-found h1 span { color: var(--muted); }
 
-.heart {
-  display: inline-block;
-  width: 0.95em;
-  height: 0.95em;
-  margin: 0 0.1em;
-  vertical-align: -0.12em;
-  fill: #e5383b;
-  animation: pulse 1.2s ease-in-out infinite;
-}
+/* Medium screens */
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.3); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.18); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .heart { animation: none; }
-}
-
-/* Spans 90% of the viewport (Instrument Serif sets "Reliure" 2.414em wide)
-   and sits flush on the bottom edge: the negative margin cancels the space below the baseline. */
-.footer-mark {
-  margin: 48px 0 -0.15em;
-  font-family: var(--serif);
-  font-size: 37.3vw;
-  line-height: 1;
-  color: var(--surface-secondary);
-  opacity: 0.5;
-  user-select: none;
-  /* At this size the glyph box reaches above the element and would cover the footer links. */
-  pointer-events: none;
-}
-
-/* Medium and small screens: text above the phone, dot on the spot, no line. */
-
-@media (max-width: 1000px) {
-  .tour { --ph: min(1300px, calc(100svh - 220px), 190vw); }
-  .stage { place-items: end center; padding-bottom: 24px; }
-  .callout, .callout-right { inset: 0; width: auto; transform: none; display: block; }
-  .callout-text {
-    position: absolute;
-    bottom: calc(100% + 24px);
-    left: 50%;
-    width: min(420px, 90vw);
-    /* Centered on the phone: pull back by half its own width. */
-    margin-left: calc(min(420px, 90vw) / -2);
-    text-align: center;
-  }
-  .callout-text h3 { font-size: 28px; }
-  .callout-text p { font-size: 15px; }
-  .callout-line { display: none; }
-  .callout .callout-dot { left: calc(var(--x) * 1%); top: calc(var(--y) * 1%); right: auto; margin: -6px 0 0 -6px; }
-  .features ul { grid-template-columns: 1fr 1fr; }
+@media (max-width: 900px) {
+  .features { grid-template-columns: repeat(3, 1fr); }
+  .ads-grid { grid-template-columns: 1fr; }
+  .doodle.side { display: none; }
 }
 
 /* Small screens */
 
-@media (max-width: 760px) {
-  .qr { display: none; }
-  .nav { padding: 20px 24px; }
-  .brand { gap: 10px; font-size: 32px; }
-  .brand img { width: 42px; height: 42px; }
-  .nav nav { gap: 14px; }
-  .hero, .legal { padding-top: 56px; }
-  .mission, .features, .faq, .closing { padding-top: 112px; }
-  .cta { padding: 16px 22px; font-size: 17px; gap: 8px; }
-  .cta-icon { width: 20px; height: 20px; }
-  .shelf { --s: 0.6; margin-top: 56px; padding: 0 16px; }
-  .features ul { grid-template-columns: 1fr; gap: 48px; }
-  .shop { padding-top: 136px; }
-  main:has(.shop) + footer { margin-top: 48px; }
-  .shop-card { grid-template-columns: 1fr; gap: 32px; padding: 36px 28px; }
-  footer { margin-top: 112px; }
-  .footer-meta { flex-direction: column; gap: 12px; text-align: center; }
-}
-
-/* Smallest phones (iPhone SE 1st gen, 320 px): keep the nav on one line and the button on one line. */
-
-@media (max-width: 380px) {
-  .nav { padding: 16px; }
-  .brand { gap: 8px; font-size: 28px; }
-  .brand img { width: 36px; height: 36px; }
-  /* Fewer books so the shelf fits a 320 px screen. */
-  .spine-extra { display: none; }
-  .nav nav { gap: 4px; }
-  .cta { padding: 14px 18px; font-size: 15px; white-space: nowrap; }
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .nav { padding: 24px 20px; gap: 18px; }
+  .nav .store, .brand span, .nav a.hide-small { display: none; }
+  .hero { padding: 36px 20px 0; }
+  .phones { margin-top: 56px; gap: 20px; }
+  .device { width: 58vw; border-radius: 38px; padding: 7px; }
+  .device img { border-radius: 31px; }
+  .features-wrap { margin-top: 80px; }
+  .features { grid-template-columns: 1fr 1fr; gap: 40px 16px; }
+  .closing { padding-top: 110px; }
+  .rule { margin-top: 90px; }
+  .answers { margin-top: 80px; }
+  .answer { grid-template-columns: 1fr; gap: 6px; }
+  .answer + .answer { margin-top: 52px; }
+  .answer > p:first-child { color: var(--accent); font-size: 14px; }
+  .ads { margin-top: 110px; padding: 0 12px; }
+  .ad { min-height: 0; border-radius: 24px; }
+  .ad-text { padding: 28px 24px 0; }
+  .ad-porcom { grid-template-columns: 1fr; }
+  .ad-porcom .ad-text { padding-bottom: 0; }
+  .ad-phone { width: 62%; justify-self: center; margin: 28px 0 -55%; }
+  .doodle { display: none; }
+  footer { margin-top: 110px; padding-top: 56px; }
+  .wordmark { margin-top: 36px; }
 }
