@@ -55,7 +55,7 @@ for pair in $SCREENS; do
     suffix=$([ "$appearance" = dark ] && echo -dark || true)
     xcrun simctl terminate "$UDID" "$BUNDLE" 2>/dev/null || true
     xcrun simctl launch "$UDID" "$BUNDLE" -seedSampleData $extra -inMemoryStore \
-      -"readingGoal.$(date +%Y)" "$GOAL" -appearance "$appearance" \
+      -"readingGoal.$(date +%Y)" "$GOAL" -backupRemindersEnabled NO -appearance "$appearance" \
       -AppleLanguages "($LANG_CODE)" -AppleLocale "$LOCALE" ${screen:+-debugScreen "$screen"} >/dev/null
     sleep 5
     xcrun simctl io "$UDID" screenshot "$TMP/raw.png" >/dev/null 2>&1
