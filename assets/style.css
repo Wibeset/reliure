@@ -263,7 +263,7 @@ h1, h2, h3, p { margin: 0; }
 .answer a { color: var(--accent); text-decoration: none; }
 .answer a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* Ads, kept: Reliure and the Omnomnom tee shop, each in its own colors. */
+/* Ads, kept: Arpente, Porcom and the Omnomnom tee shop, each in its own colors. */
 
 .ads { max-width: 1000px; margin: 150px auto 0; padding: 0 24px; }
 .ads-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -303,9 +303,13 @@ h1, h2, h3, p { margin: 0; }
 
 .ad-cta svg { width: 15px; height: 15px; margin-top: -2px; fill: currentColor; }
 
-/* Porcom: its black and screen red, its home screen peeking from the bottom. */
-.ad-porcom { grid-template-columns: 1.15fr 0.85fr; grid-template-rows: none; background: #1c1312; color: #f4efe8; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
-.ad-porcom .ad-text { padding-bottom: 36px; }
+/* Arpente and Porcom: each app's colors, its home screen peeking from the bottom. */
+.ad-arpente, .ad-porcom { grid-template-columns: 1.15fr 0.85fr; grid-template-rows: none; }
+.ad-arpente .ad-text, .ad-porcom .ad-text { padding-bottom: 36px; }
+.ad-arpente { background: #2d5a3d; color: #f4efe4; }
+.ad-arpente .ad-cta { background: #f4efe4; color: #2d5a3d; }
+.ad-arpente h3 img { box-shadow: 0 0 0 1px rgb(244 239 228 / 0.3); }
+.ad-porcom { background: #1c1312; color: #f4efe8; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06); }
 .ad-porcom .ad-tagline { font-family: var(--sans); font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
 .ad-porcom .ad-cta { background: #ff5a52; color: #fff; }
 
@@ -320,12 +324,14 @@ h1, h2, h3, p { margin: 0; }
 }
 
 .ad-phone img { display: block; width: 100%; height: auto; border-radius: 11% / 5.1%; }
-.ad-porcom:hover .ad-phone { translate: 0 -8px; }
+.ad-arpente:hover .ad-phone, .ad-porcom:hover .ad-phone { translate: 0 -8px; }
 
-.ad-omnomnom { background: #2e2614; color: #ffe8a3; }
+/* The tee shop: across the full row below the two apps, the tees beside the text. */
+.ad-omnomnom { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; grid-template-rows: none; min-height: 0; background: #2e2614; color: #ffe8a3; }
+.ad-omnomnom .ad-text { padding-bottom: 36px; }
 .ad-omnomnom .ad-cta { background: #ffe8a3; color: #2b2112; }
 
-.ad-tees { align-self: end; display: flex; justify-content: center; padding: 28px 24px 34px; }
+.ad-tees { align-self: center; display: flex; justify-content: center; padding: 34px 24px; }
 
 .ad-tees img {
   width: 34%;
@@ -472,8 +478,9 @@ footer nav a:hover, footer nav a[aria-current] { color: var(--text); }
   .ads { margin-top: 110px; padding: 0 12px; }
   .ad { min-height: 0; border-radius: 24px; }
   .ad-text { padding: 28px 24px 0; }
-  .ad-porcom { grid-template-columns: 1fr; }
-  .ad-porcom .ad-text { padding-bottom: 0; }
+  .ad-arpente, .ad-porcom, .ad-omnomnom { grid-template-columns: 1fr; }
+  .ad-arpente .ad-text, .ad-porcom .ad-text, .ad-omnomnom .ad-text { padding-bottom: 0; }
+  .ad-tees { padding: 28px 24px 34px; }
   .ad-phone { width: 62%; justify-self: center; margin: 28px 0 -55%; }
   .doodle { display: none; }
   footer { margin-top: 110px; padding-top: 56px; }
