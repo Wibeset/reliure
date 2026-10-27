@@ -1,5 +1,5 @@
 #!/bin/sh
-# Captures the seven tour screens from the iOS app in the simulator, light and dark,
+# Captures the tour screens from the iOS app in the simulator, light and dark,
 # and writes them as AVIF + WebP to assets/screens/<lang>/.
 #
 #   scripts/capture-screens.sh fr      # or: en
@@ -40,23 +40,30 @@ xcrun simctl status_bar "$UDID" override --time 9:41 --dataNetwork wifi --wifiMo
 trap 'xcrun simctl status_bar "$UDID" clear; rm -rf "$TMP"' EXIT
 
 mkdir -p "$OUT"
+# The sample books' real covers, downloaded once by the app repo's script.
+COVERS=$IOS/build/sample-covers
+[ -d "$COVERS" ] || "$IOS/Scripts/fetch-sample-covers.sh"
 # A goal the sample library is on track for, so the goal card shows progress rather than an invitation.
-GOAL=${GOAL:-3}
+GOAL=${GOAL:-20}
+# The year in review's card shown: its covers.
+YEAR_CARD=${YEAR_CARD:-9}
 # Site name → app debug screen ("" is the home screen the app opens on).
 # The site is dark only; APPEARANCES="light dark" captures both.
 APPEARANCES=${APPEARANCES:-dark}
 # SCREENS="detail:detail" recaptures only some.
-SCREENS=${SCREENS:-"home: update:update detail:detail statistics:statistics calendar:calendar milestones:milestones share:share"}
+SCREENS=${SCREENS:-"home: update:update bookcase:bookcase statistics:statistics milestones:milestones year:yearInReview"}
 for pair in $SCREENS; do
   name=${pair%%:*} screen=${pair#*:}
-  # The milestones need a year of history to show more than a few badges.
-  extra=$([ "$name" = milestones ] && echo -seedYearInReview || true)
+  # The review is offered whatever the date, but only here: elsewhere it adds a banner.
+  review=$([ "$name" = year ] && echo "$YEAR_CARD -yearInReviewYear $(date +%Y)" || true)
   for appearance in $APPEARANCES; do
     suffix=$([ "$appearance" = dark ] && echo -dark || true)
     xcrun simctl terminate "$UDID" "$BUNDLE" 2>/dev/null || true
-    xcrun simctl launch "$UDID" "$BUNDLE" -seedSampleData $extra -inMemoryStore \
+    # A year of history fills the shelves, the statistics, the milestones and the year in review.
+    xcrun simctl launch "$UDID" "$BUNDLE" -seedSampleData -seedYearInReview -inMemoryStore \
       -"readingGoal.$(date +%Y)" "$GOAL" -backupRemindersEnabled NO -appearance "$appearance" \
-      -AppleLanguages "($LANG_CODE)" -AppleLocale "$LOCALE" ${screen:+-debugScreen "$screen"} >/dev/null
+      -AppleLanguages "($LANG_CODE)" -AppleLocale "$LOCALE" ${screen:+-debugScreen "$screen"} $review \
+      -sampleCoversDir "$COVERS" -statisticsPeriod month >/dev/null
     sleep 5
     xcrun simctl io "$UDID" screenshot "$TMP/raw.png" >/dev/null 2>&1
     # 750 px wide covers the phone frame at 2x.
