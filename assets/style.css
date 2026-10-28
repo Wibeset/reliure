@@ -1,5 +1,5 @@
 /* Reliure's site, laid out like Porcom's (../porcom), after Rollie (via One Page Love), in dark only: a centered title,
-   a soft ink-blue pill, a row of phones running off both edges, hand-drawn bookish doodles, ten small colored features,
+   a soft ink-blue pill, a row of phones running off both edges, hand-drawn bookish doodles, fifteen small colored features,
    and the questions set as labeled paragraphs. The accent is Reliure's navy, lifted to read on black.
    Source stylesheet: run scripts/build-css.sh after editing. */
 
@@ -469,6 +469,8 @@ footer nav a:hover, footer nav a[aria-current] { color: var(--text); }
   .device img { border-radius: 31px; }
   .features-wrap { margin-top: 80px; }
   .features { grid-template-columns: 1fr 1fr; gap: 40px 16px; }
+  /* Fifteen on two columns: the last one alone, centered. */
+  .features li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .closing { padding-top: 110px; }
   .rule { margin-top: 90px; }
   .answers { margin-top: 80px; }

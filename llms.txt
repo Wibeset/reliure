@@ -1,18 +1,21 @@
 # Reliure
 
-> Reliure is a free reading tracker app for iPhone, in English and French. Scan your books, log your pages, keep quotes, notes and ratings, and see your reading statistics and calendar. No account, no ads: your library is stored on your iPhone. Made by Wibeset in Canada.
+> Reliure is a free reading tracker app for iPhone, in English and French. Scan your books, log your pages, keep quotes, notes and ratings, and see your reading statistics and calendar. No account, no ads: your library is stored on your iPhone and synced through the reader’s own iCloud. Made by Wibeset in Canada.
 
 Key facts:
 
 - Platform: iPhone only (not available on Android or the web). Available on the App Store: https://apps.apple.com/app/id6818318860
 - Price: free, with no ads, no subscription and no account.
-- Privacy: the library, reading sessions, notes and ratings are stored on the device; the developer never receives them.
+- Privacy: the library, reading sessions, notes and ratings are stored on the device and, when signed in to iCloud, synced across the reader’s devices through their private iCloud database; the developer never receives them.
 - Adding books: scan the ISBN barcode, search by title or author, or enter a book by hand. Book details come from Google Books, Open Library and the Bibliothèque nationale de France.
 - Progress: enter a page or a percentage; each update is saved as a reading session that feeds statistics, streaks and a yearly reading goal.
+- Library and statistics: a bookcase of the books of the moment, pages read by author and publisher, a reading calendar, a year in review, twelve reading levels, milestones and a monthly challenge.
+- Next read: a wheel picks the next book among the reader’s books to read, or among Open Library books by the authors they loved and in the genres they read most.
+- Sharing: a book, a quote, the bookcase, the reading calendar, a milestone or the year in reading as an image; the wishlist as a list of gift ideas with a link to buy each book.
 - Formats: designed for print books, tracked by page.
-- Offline: everything works without a connection, except looking up a book online.
+- Offline: everything works without a connection, except looking up a book online and Open Library suggestions.
 - Goodreads: imports a Goodreads library (CSV) and exports in the Goodreads CSV format, which Goodreads and StoryGraph can import.
-- Backups: included in iCloud device backups; a Reliure backup file can also be exported and restored on another iPhone.
+- Backups: iCloud sync brings the library back on a new iPhone; a Reliure backup file can also be exported and restored on another iPhone.
 
 ## Pages
 
