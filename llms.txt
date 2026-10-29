@@ -10,7 +10,7 @@ Key facts:
 - Adding books: scan the ISBN barcode, search by title or author, or enter a book by hand. Book details come from Google Books, Open Library and the Bibliothèque nationale de France, and missing covers from Les libraires.
 - Progress: enter a page or a percentage; each update is saved as a reading session that feeds statistics, streaks and a yearly reading goal.
 - Library and statistics: a bookcase of the books of the moment, pages read by author and publisher, a reading calendar, a year in review, twelve reading levels, milestones and a monthly challenge.
-- Tropes and series: each book can have tropes (enemies to lovers, found family, slow burn…) and a spice level from Mild to Scorching; the statistics show the year’s favourite tropes, and books from the same series are grouped in order with the next volume to read.
+- Tropes and series (for BookTok readers): each book can have tropes (enemies to lovers, found family, slow burn…) and a spice level from Mild to Scorching; the statistics show the year’s favourite tropes, and books from the same series are grouped in order with the next volume to read.
 - Next read: a wheel picks the next book among the reader’s books to read, or among Open Library books by the authors they loved and in the genres they read most.
 - Sharing: a book, a quote, the bookcase, the reading calendar, a milestone or the year in reading as an image; the wishlist as a list of gift ideas with a link to buy each book.
 - Formats: designed for print books, tracked by page.
