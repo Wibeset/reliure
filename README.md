@@ -28,6 +28,7 @@ Reliure is an iPhone app for keeping track of the books you read. It's built aro
 - **Update your page in a tap.** Enter a page or a percentage, or nudge it with + and −. Every update is saved as a reading session.
 - **Remember what moved you.** Photograph a page and select a passage to keep it as a quote, plus notes and ratings, overall or by theme.
 - **Watch the habit grow.** Pages read, sessions and reading streaks, by week, month or year, pages read by author and publisher, a yearly reading goal, and a reading calendar of the books you read each day.
+- **Talk like BookTok.** Tag each book with its tropes and rate its spice from Mild to Scorching, then see your favourite tropes of the year. Series stay together, in order, with the next volume ready to start.
 - **See your shelves.** A bookcase of the books of the moment: the ones you're reading and the next ones on top, the latest finished below.
 - **Choose what's next.** Spin the wheel and let chance pick among your books to read, or among books from Open Library by the authors you loved and in the genres you read most.
 - **Play along.** Twelve reading levels, milestones to unlock, a challenge each month, and a streak that forgives a day off each week.
