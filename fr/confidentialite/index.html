@@ -16,10 +16,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/apple-touch-icon.png">
   <link rel="manifest" href="../../site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap">
+  <link rel="preload" href="../../assets/fonts/headland-one-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../../assets/style.min.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Reliure", "item": "https://reliure.me/fr/"}, {"@type": "ListItem", "position": 2, "name": "Confidentialité", "item": "https://reliure.me/fr/confidentialite/"}]}]}</script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Reliure">
   <meta property="og:title" content="Politique de confidentialité — Reliure">
@@ -35,16 +34,14 @@
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
-  <header class="nav">
-    <a class="brand" href="../../fr/"><img src="../../assets/icon-dark.png" width="30" height="30" alt="">Reliure <span>pour iPhone</span></a>
-    <a class="hide-small" href="../../fr/assistance/">Assistance</a>
-    <a class="hide-small" href="../../fr/alternative-goodreads/">Alternative à Goodreads</a>
-    <a href="../../privacy/" hreflang="en" lang="en">English</a>
-    <a class="store" href="https://apps.apple.com/app/id6818318860">Disponible sur l’App Store <span aria-hidden="true">→</span></a>
-  </header>
-
   <main id="main">
     <article class="legal">
+      <nav class="breadcrumb" aria-label="Fil d’Ariane">
+        <ol>
+          <li><a href="../../fr/"><img src="../../assets/icon-dark.png" width="20" height="20" alt="">Reliure</a></li>
+          <li aria-current="page">Confidentialité</li>
+        </ol>
+      </nav>
       <h1>Politique de confidentialité</h1>
       <p class="updated">Dernière mise à jour : 29 octobre 2026</p>
 
@@ -102,16 +99,17 @@
   </main>
 
   <footer>
-    <svg class="heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg>
-    <p>Fait par <a href="https://wibeset.ca">Wibeset</a> · Développé au Canada</p>
     <nav aria-label="Pied de page">
       <a href="https://apps.apple.com/app/id6818318860">App Store ↗</a>
       <a href="../../fr/assistance/">Assistance</a>
       <a href="../../fr/confidentialite/" aria-current="page">Confidentialité</a>
+      <a href="../../fr/nouveautes/">Nouveautés</a>
       <a href="../../fr/alternative-goodreads/">Alternative à Goodreads</a>
+      <a href="../../fr/alternative-storygraph/">Alternative à StoryGraph</a>
+      <a href="../../fr/suivi-booktok/">Suivi BookTok</a>
       <a href="../../privacy/" hreflang="en" lang="en">English</a>
     </nav>
-    <div class="wordmark-clip"><p class="wordmark" aria-hidden="true">Reliure</p></div>
+    <p>Fait avec <svg class="heart" viewBox="0 0 24 22" role="img" aria-label="amour"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg> par <a href="https://wibeset.ca">Wibeset</a>. Développé au Canada.</p>
   </footer>
   <script src="../../assets/main.js" defer></script></body>
 </html>

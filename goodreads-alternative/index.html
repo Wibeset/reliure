@@ -16,11 +16,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap">
+  <link rel="preload" href="../assets/fonts/headland-one-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/style.min.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://reliure.me/goodreads-alternative/", "url": "https://reliure.me/goodreads-alternative/", "name": "Goodreads Alternative Without an Account — Reliure", "description": "Looking for a Goodreads alternative? Reliure is a free reading tracker for iPhone with no account, no ads and no feed. Import your Goodreads library and keep reading.", "inLanguage": "en", "dateModified": "2026-10-10", "isPartOf": {"@id": "https://reliure.me/#website"}, "about": {"@id": "https://reliure.me/#app"}}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://reliure.me/goodreads-alternative/", "url": "https://reliure.me/goodreads-alternative/", "name": "Goodreads Alternative Without an Account — Reliure", "description": "Looking for a Goodreads alternative? Reliure is a free reading tracker for iPhone with no account, no ads and no feed. Import your Goodreads library and keep reading.", "inLanguage": "en", "dateModified": "2026-10-10", "isPartOf": {"@id": "https://reliure.me/#website"}, "about": {"@id": "https://reliure.me/#app"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Reliure", "item": "https://reliure.me/"}, {"@type": "ListItem", "position": 2, "name": "Goodreads alternative", "item": "https://reliure.me/goodreads-alternative/"}]}]}</script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Reliure">
   <meta property="og:title" content="Goodreads Alternative Without an Account — Reliure">
@@ -36,16 +34,14 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="nav">
-    <a class="brand" href="../"><img src="../assets/icon-dark.png" width="30" height="30" alt="">Reliure <span>for iPhone</span></a>
-    <a class="hide-small" href="../support/">Support</a>
-    <a class="hide-small" href="../goodreads-alternative/">Goodreads alternative</a>
-    <a href="../fr/alternative-goodreads/" hreflang="fr" lang="fr">Français</a>
-    <a class="store" href="https://apps.apple.com/app/id6818318860">Available on the App Store <span aria-hidden="true">→</span></a>
-  </header>
-
   <main id="main">
     <article class="legal">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="../"><img src="../assets/icon-dark.png" width="20" height="20" alt="">Reliure</a></li>
+          <li aria-current="page">Goodreads alternative</li>
+        </ol>
+      </nav>
       <h1>A Goodreads alternative, without an account</h1>
       <p class="updated">Last updated: October 27, 2026</p>
 
@@ -97,16 +93,17 @@
   </main>
 
   <footer>
-    <svg class="heart" viewBox="0 0 24 22" aria-hidden="true"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg>
-    <p>Made by <a href="https://wibeset.ca">Wibeset</a> · Developed in Canada</p>
     <nav aria-label="Footer">
       <a href="https://apps.apple.com/app/id6818318860">App Store ↗</a>
       <a href="../support/">Support</a>
       <a href="../privacy/">Privacy</a>
+      <a href="../whats-new/">What’s new</a>
       <a href="../goodreads-alternative/" aria-current="page">Goodreads alternative</a>
+      <a href="../storygraph-alternative/">StoryGraph alternative</a>
+      <a href="../booktok-tracker/">BookTok tracker</a>
       <a href="../fr/alternative-goodreads/" hreflang="fr" lang="fr">Français</a>
     </nav>
-    <div class="wordmark-clip"><p class="wordmark" aria-hidden="true">Reliure</p></div>
+    <p>Made with <svg class="heart" viewBox="0 0 24 22" role="img" aria-label="love"><path d="M12 21.6 10.3 20C4.2 14.5 0 10.8 0 6.3 0 2.7 2.8 0 6.3 0c2 0 4 .9 5.7 2.5C13.7.9 15.7 0 17.7 0 21.2 0 24 2.7 24 6.3c0 4.5-4.2 8.2-10.3 13.7Z"/></svg> by <a href="https://wibeset.ca">Wibeset</a>. Developed in Canada.</p>
   </footer>
   <script src="../assets/main.js" defer></script></body>
 </html>
