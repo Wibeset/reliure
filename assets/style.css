@@ -269,6 +269,8 @@ h1 { isolation: isolate; }
   border-radius: 2px;
   pointer-events: none;
 }
+/* Each screen is a <picture> (AVIF, with WebP as the fallback): let its img lay out as if the wrapper weren’t there. */
+.device picture { display: contents; }
 .device img {
   display: block;
   width: 100%;
@@ -365,7 +367,7 @@ h1 { isolation: isolate; }
 .preview .device img.is-active { opacity: 1; scale: 1; }
 
 /* Without JavaScript, the first screen shows. */
-html:not(.js) .preview .device img:first-child { opacity: 1; scale: 1; }
+html:not(.js) .preview .device > :first-child img, html:not(.js) .preview .device > img:first-child { opacity: 1; scale: 1; }
 
 /* Each screen also travels with its words, for narrow windows. */
 .shot { display: none; }
@@ -427,6 +429,8 @@ footer nav a:hover, footer nav a[aria-current] { color: var(--white); }
 .legal h2 { margin: 56px 0 0; font-size: 24px; }
 .legal p, .legal li { max-width: 794px; }
 .legal p { margin-top: 15px; }
+.legal h3 { margin: 28px 0 0; font-size: inherit; font-weight: 500; color: var(--white); }
+.legal h3 + p { margin-top: 6px; }
 .legal p.lede { margin-top: 28px; font-size: 22px; line-height: 1.5; color: var(--white); }
 .legal ul, .legal ol { margin: 15px 0 0; padding-left: 1.2em; }
 .legal li + li { margin-top: 8px; }
@@ -434,6 +438,12 @@ footer nav a:hover, footer nav a[aria-current] { color: var(--white); }
 
 /* Comparison table (Goodreads alternative page): scrolls sideways on narrow screens. */
 .table-scroll { margin-top: 24px; overflow-x: auto; }
+/* On narrow screens, say that the table scrolls: its right-hand columns are otherwise just cut off. */
+.scroll-hint { display: none; }
+@media (max-width: 600px) {
+  .legal .scroll-hint { display: block; margin-top: 24px; font-size: 14px; color: var(--faint); }
+  .scroll-hint + .table-scroll { margin-top: 8px; }
+}
 .compare { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 16px; }
 .compare th, .compare td { padding: 12px 12px 12px 0; border-bottom: 1px dotted var(--hairline); text-align: left; vertical-align: top; }
 .compare thead th { font-weight: 400; color: var(--white); }
