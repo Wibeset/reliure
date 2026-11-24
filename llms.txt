@@ -27,6 +27,15 @@ Key facts:
 - [BookTok tracker](https://reliure.me/booktok-tracker/): tropes, spice levels from Mild to Scorching, and series in order
 - [Goodreads alternative](https://reliure.me/goodreads-alternative/): how Reliure compares with Goodreads and StoryGraph, and how to move from Goodreads
 - [StoryGraph alternative](https://reliure.me/storygraph-alternative/): how Reliure compares with StoryGraph, and when StoryGraph may suit a reader better
+- [Reading tracker alternatives](https://reliure.me/alternatives/): how Reliure compares with Goodreads, StoryGraph, Hardcover, Fable, Bookly, Basmo, Bookmory, BookBuddy, Book Tracker and Bookshelf
+- [Hardcover alternatives](https://reliure.me/hardcover-alternative/)
+- [Fable alternatives](https://reliure.me/fable-alternative/)
+- [Bookly alternatives](https://reliure.me/bookly-alternative/)
+- [Basmo alternatives](https://reliure.me/basmo-alternative/)
+- [Bookmory alternatives](https://reliure.me/bookmory-alternative/)
+- [BookBuddy alternatives](https://reliure.me/bookbuddy-alternative/)
+- [Book Tracker alternatives](https://reliure.me/book-tracker-alternative/)
+- [Bookshelf alternatives](https://reliure.me/bookshelf-alternative/)
 - [Support](https://reliure.me/support/): contact, backups, barcode scanning, missing books, exports, and answers on adding books, progress, sharing, tropes and spice, the next-read wheel, languages, offline use and formats
 - [Privacy policy](https://reliure.me/privacy/): what information the app handles
 

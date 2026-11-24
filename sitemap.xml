@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://reliure.me/storygraph-alternative/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/storygraph-alternative/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/alternative-storygraph/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/storygraph-alternative/"/>
@@ -69,6 +69,42 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://reliure.me/storygraph-alternative/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://reliure.me/fr/alternative-storygraph/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://reliure.me/storygraph-alternative/"/>
+  </url>
+  <url>
+    <loc>https://reliure.me/alternatives/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://reliure.me/hardcover-alternative/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://reliure.me/fable-alternative/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://reliure.me/bookly-alternative/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://reliure.me/basmo-alternative/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://reliure.me/bookmory-alternative/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://reliure.me/bookbuddy-alternative/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://reliure.me/book-tracker-alternative/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
+    <loc>https://reliure.me/bookshelf-alternative/</loc>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://reliure.me/support/</loc>
